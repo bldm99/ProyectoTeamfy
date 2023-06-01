@@ -1,0 +1,19 @@
+
+
+.pagina{
+    padding-top: 76px;
+    /*background: red;*/
+    display: grid;
+    grid-template-columns: 18% 82%;
+    
+}
+
+.pagina .cambios{
+    background: rgb(2, 32, 2);
+
+}
+
+.pagina .apariencia{
+    
+
+}

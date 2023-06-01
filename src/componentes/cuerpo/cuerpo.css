@@ -1,0 +1,22 @@
+
+.cuerpo{
+    padding-top: 76px;
+    background: orange;
+    display: grid;
+    grid-template-columns: 18% 82%;
+    /*grid-template-columns: repeat(2, 70% 30%);*/
+   
+
+}
+
+.cuerpo .lado{
+    background: rgb(39, 38, 38);
+    
+
+}
+
+.cuerpo .componentes{
+    
+    background: blueviolet;
+
+}
