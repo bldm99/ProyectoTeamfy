@@ -7,6 +7,7 @@ import Inicio from '../inicio/Inicio';
 import { useState } from 'react';
 
 const Pagina = () => {
+    //
 
     const [titulo, setTitulo] = useState('titulo provisional')
     const [selectedImage, setSelectedImage] = useState(null);
