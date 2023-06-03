@@ -4,16 +4,19 @@
     padding-top: 76px;
     /*background: red;*/
     display: grid;
-    grid-template-columns: 18% 82%;
+    grid-template-columns: 26% 74%;
     
 }
 
 .pagina .cambios{
-    background: rgb(2, 32, 2);
+    background: rgb(36, 35, 35);
+    
 
 }
 
 .pagina .apariencia{
+    background: blueviolet;
     
+
 
 }

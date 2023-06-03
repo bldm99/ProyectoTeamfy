@@ -1,8 +1,32 @@
 
-.cambios{
+.cam{
     color: white;
     position: fixed;
-   
-    width: 18%;
+    /*background: red;*/
+    width: 26%;
     height: 100%;
+    display: grid;
+    grid-template-columns: 15% 85%;  
 }
+
+.cam .options{
+    /*background: rgb(112, 238, 29);*/
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.options .options-li{
+    margin: 0;
+    padding: 0;
+}
+.options .options-li li{
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+
+
+.cam .cajas{
+    /*background: red;*/
+}
+

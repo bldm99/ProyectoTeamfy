@@ -3,14 +3,19 @@ import './pagina.css'
 
 import Cambios from './cambios/Cambios';
 import Apariencia from './apariencia/Apariencia';
-import Inicio from '../inicio/Inicio';
 import { useState } from 'react';
+
+import imgpredeterminada from  './portada.jpg'
 
 const Pagina = () => {
     //
 
+
+    
     const [titulo, setTitulo] = useState('titulo provisional')
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(imgpredeterminada);
+    const [descripcion, setDescripcion] = useState('Tienda de ... ')
+    const [color , setColor] = useState("#D9F7E9")
     
 
     const handleImageChange = (event) => {
@@ -26,28 +31,34 @@ const Pagina = () => {
 
     return (
         <div className='pagina'>
-            <>fragment</>
+           
             <div className='cambios'>
                 <Cambios
                     xtitulo={setTitulo}
+                    ximagen={setSelectedImage}
+                    xdescripcion={setDescripcion}
+                    xcolor={setColor}
+                    tinte={color}
+
                 />
             </div>
 
-            <div className='apariencia'>
+            <div className='apariencia'>  
+                <Apariencia
+                    titu={titulo} 
+                    imagen={selectedImage}
+                    descripcion={descripcion} 
+                    color={color}
+                />
+               
                 
-                <Apariencia titu={titulo} />
-
-
-                {titulo}
-                <div>
-                    <h2>Galería</h2>
+                {/*<div>
+                    <h2>Galeríagggg</h2>
                     <input type="file" accept="image/*" onChange={handleImageChange} />
                     {selectedImage && (
                         <img src={selectedImage} alt="Imagen seleccionada" />
                     )}
-                </div>
-
-
+                    </div>*/}
             </div>
         </div>
     );
