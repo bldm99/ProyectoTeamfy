@@ -5,10 +5,10 @@ import PHeader from './PHeader'
 import Inicio from '../../inicio/Inicio';
 
 
-const Cambios = ({ xtitulo, ximagen, xdescripcion , xcolor , tinte }) => {
+const Cambios = ({ xtitulo, ximagen, xdescripcion, xcolor, tinte }) => {
 
     //<li onClick={() => cambio(<Inicio/>)} >Inicio</li>
-    
+
 
     const [changecomp, setChangecomp] = useState(
         <PHeader
@@ -31,14 +31,16 @@ const Cambios = ({ xtitulo, ximagen, xdescripcion , xcolor , tinte }) => {
                         xtitulo={xtitulo}
                         ximagen={ximagen}
                         xdescripcion={xdescripcion}
+                        xcolor={xcolor}
+                        xtinte={tinte}
                     />)}>B</li>
-                    
+
                     <li>C</li>
                 </ul>
             </div>
             <div className='cajas'>
                 <h2>Ajustes de plantilla</h2>
-                
+
                 {/*<PHeader 
                     xtitulo={xtitulo} 
                     ximagen={ximagen}

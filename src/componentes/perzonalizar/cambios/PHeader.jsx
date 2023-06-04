@@ -5,18 +5,13 @@ import './pheader.css'
 
 const PHeader = ({ xtitulo, ximagen , xdescripcion , xcolor , xtinte }) => {
 
-
+ 
     const [color , setColor] = useState(xtinte)
  
-
-    
     const actualizarCol = (event) => {
-        console.log(event.target.value)
-        console.log("Funciona esto?", xtinte)
+        //console.log(event.target.value)
         xcolor(event.target.value)
-        setColor(event.target.value) //solo cambia el color del imput
-
-       
+        setColor(event.target.value) //solo cambia el color del imput 
     }
    
 
@@ -62,12 +57,10 @@ const PHeader = ({ xtitulo, ximagen , xdescripcion , xcolor , xtinte }) => {
                 </div>
 
                 <input type="color"
-                        value={color}
+                        value={color || '#000000'}
                         onChange={actualizarCol} 
+                        onMouseEnter={() =>{console.log("cursor")}}
                 />
-
-                
-
 
             </div>
 

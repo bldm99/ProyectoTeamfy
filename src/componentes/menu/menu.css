@@ -76,6 +76,11 @@
 
 
 .menu__list__item:hover .my__caja , .menu__list__item:hover .my__caja2 {
+    opacity: 1;
     display: flex; /*paso 3 efecto hover ventana emergente*/
+    visibility: visible;
+    
+   
+
     
 }
