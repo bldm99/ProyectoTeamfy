@@ -9,11 +9,12 @@
     grid-template-columns: 15% 85%;  
 }
 
+
+
 .cam .options{
-    /*background: rgb(112, 238, 29);*/
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 .options .options-li{
     margin: 0;
@@ -28,5 +29,28 @@
 
 .cam .cajas{
     /*background: red;*/
+}
+
+
+
+/*Dispositivos tabletas*/
+
+@media (max-width: 768px) {
+    .cam{
+        height: 0%;
+        grid-template-columns: 100%; 
+    }
+    .options .options-li{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .options .options-li li{
+        margin-top: 0;
+    }
+    .cam .cajas h2{
+        font-size: 4vw;
+    }
+
 }
 

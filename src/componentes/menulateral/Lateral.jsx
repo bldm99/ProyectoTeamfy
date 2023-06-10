@@ -28,9 +28,10 @@ const Lateral = ({cambio}) => {
             <h2>Barra lateral</h2>
             <div>
                 <ul>
-                    <li onClick={() => cambio(<Inicio/>)} >Inicio</li>
+                    <li onClick={() => cambio(<Inicio/>)} >Inicio</li> {/* Bradon */}
                     <li onClick={() => cambio(<Pedidos/>)}>Pedidos</li>
                     <li onClick={() => cambio(<Error/>)}>Productos</li>
+                    
 
                     <li>Clientes</li>
                     <li>Contenido</li>

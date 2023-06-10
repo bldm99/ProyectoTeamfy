@@ -5,8 +5,9 @@
     background: whitesmoke;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     align-items: center;
+    height: 100%;
 }
 
 .pheader hr{

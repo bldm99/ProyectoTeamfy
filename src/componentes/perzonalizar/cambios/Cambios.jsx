@@ -41,12 +41,6 @@ const Cambios = ({ xtitulo, ximagen, xdescripcion, xcolor, tinte }) => {
             <div className='cajas'>
                 <h2>Ajustes de plantilla</h2>
 
-                {/*<PHeader 
-                    xtitulo={xtitulo} 
-                    ximagen={ximagen}
-                    xdescripcion={xdescripcion} 
-                />*/}
-
                 {changecomp}
 
 
