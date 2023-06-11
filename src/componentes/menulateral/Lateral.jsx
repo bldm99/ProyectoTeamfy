@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Pedidos from '../pedidos/Pedidos';
 import Error from '../error/Error';
 import Inicio from '../inicio/Inicio';
+import Clientes from '../clientes/Clientes'
+
 
 
 const Lateral = ({cambio}) => {
@@ -31,9 +33,7 @@ const Lateral = ({cambio}) => {
                     <li onClick={() => cambio(<Inicio/>)} >Inicio</li> {/* Bradon */}
                     <li onClick={() => cambio(<Pedidos/>)}>Pedidos</li>
                     <li onClick={() => cambio(<Error/>)}>Productos</li>
-                    
-
-                    <li>Clientes</li>
+                    <li onClick={() => cambio(<Clientes/>)}>Clientes</li>
                     <li>Contenido</li>
                     <li>Informe de estadistica</li>
                     <li>Marketing</li>
