@@ -1,0 +1,203 @@
+.productos-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.productos-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  transform: translateY(-5px);
+  
+}
+
+.nav-button {
+  background-color: #fff;
+  border: none;
+  color: #555555;
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  color: #000;
+}
+
+.producto-actual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px); 
+}
+
+.producto-imagen {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  transform: translateY(-5px); 
+}
+
+.producto-informacion {
+  margin-top: 20px;
+  
+}
+
+.producto-informacion h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #555555;
+}
+
+.producto-informacion p {
+  font-size: 18px;
+  color: #777777;
+}
+
+.agregar-producto-container {
+  max-width: 400px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.agregar-producto-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.agregar-producto-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.agregar-button {
+  background-color: slateblue;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.agregar-button:hover {
+  background-color: black;
+  transform: translateY(-5px); 
+}
+
+.container-related-products {
+  text-align: center;     /* Centra el texto dentro del contenedor */
+  margin-bottom: 30px;    /* Agrega un margen inferior de 30px */
+  overflow-x: auto;       /* Habilita el desplazamiento horizontal si el contenido excede el ancho del contenedor */
+  padding-bottom: 20px;   /* Agrega un relleno inferior de 20px */
+}
+
+.card-list-products {
+  display: flex;          /* Establece el contenedor como un flexbox */
+  flex-wrap: wrap;        /* Permite que los elementos se envuelvan en múltiples líneas */
+  justify-content: center; /* Centra los elementos horizontalmente dentro del contenedor */
+  gap: 25px;              /* Agrega un espacio de 25px entre las tarjetas */
+  padding: 10px;          /* Agrega un relleno interno de 10px */
+  width: fit-content;     /* Ajusta el ancho del contenedor según el contenido */
+}
+
+.card {
+  cursor: pointer;                                /* Cambia el cursor del mouse a una mano cuando se pasa sobre la tarjeta */
+  background-color: #ffffff;                      /* Establece el color de fondo de la tarjeta a blanco */
+  border-radius: 5px;                             /* Agrega bordes redondeados de 5px a la tarjeta */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);       /* Agrega una sombra sutil a la tarjeta */
+  transition: transform 0.3s ease;                /* Aplica una transición suave de transformación con una duración de 0.3s */
+  flex: 0 0 calc(50% - 12.5px);                   /* Establece el tamaño flexible de la tarjeta según el ancho del contenedor */
+  margin-bottom: 25px;                            /* Agrega un margen inferior de 25px a la tarjeta */
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 12.5px);                 /* Cambia el tamaño flexible de la tarjeta en pantallas de hasta 768px */
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    flex: 0 0 calc(100% - 25px);                   /* Cambia el tamaño flexible de la tarjeta en pantallas de hasta 576px */
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);                     /* Aplica una transformación de desplazamiento hacia arriba de 5px cuando se pasa el mouse sobre la tarjeta */
+}
+
+.card-img {
+  background: transparent;                         /* Establece el fondo del contenedor de imagen de la tarjeta como transparente */
+  margin-bottom: 15px;                             /* Agrega un margen inferior de 15px al contenedor de imagen de la tarjeta */
+}
+
+.card-img img {
+  height: 400px;                                   /* Establece la altura de la imagen de la tarjeta en 400px */
+  object-fit: cover;                               /* Ajusta la imagen para cubrir el contenedor */
+  border-radius: 5px;                              /* Agrega bordes redondeados de 5px a la imagen */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);       /* Agrega una sombra suave a la imagen */
+}
+
+.info-card {
+  display: flex;                                   /* Establece el contenedor de información de la tarjeta como un flexbox */
+  justify-content: space-between;                  /* Distribuye el contenido en ambos extremos del contenedor */
+  padding: 10px;                                   /* Agrega un relleno interno de 10px al contenedor de información */
+}
+
+.text-product {
+  color: #252525;                                 /* Establece el color del texto en #252525 */
+  font-weight: 300;                               /* Establece el grosor de la fuente en 300 */
+  line-height: 1.4;                               /* Establece la altura de línea del texto en 1.4 */
+}
+
+.text-product h3 {
+  color: #252525;                                 /* Establece el color del encabezado h3 en #252525 */
+  font-weight: 400;                               /* Establece el grosor de la fuente del encabezado h3 en 400 */
+  font-size: 18px;                                /* Establece el tamaño de la fuente del encabezado h3 en 18px */
+  margin: 0;                                      /* Elimina los márgenes superiores e inferiores del encabezado h3 */
+  transition: color 0.3s ease;                    /* Aplica una transición suave de color con una duración de 0.3s */
+}
+
+.text-product h3:hover {
+  color: #1bbeb4;                                 /* Cambia el color del encabezado h3 a #1bbeb4 al pasar el mouse sobre él */
+}
+
+.text-product p {
+  color: #777777;                                 /* Establece el color del texto de párrafo en #777777 */
+  font-size: 14px;                                /* Establece el tamaño de la fuente del párrafo en 14px */
+  margin: 0;                                      /* Elimina los márgenes superiores e inferiores del párrafo */
+  transition: color 0.3s ease;                    /* Aplica una transición suave de color con una duración de 0.3s */
+}
+
+.text-product p:hover {
+  color: #1bbeb4;                                 /* Cambia el color del párrafo a #1bbeb4 al pasar el mouse sobre él */
+}
+
+footer {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #555555;
+  font-size: 16px;
+  margin: 0;
+}
