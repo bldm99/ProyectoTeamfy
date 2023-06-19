@@ -31,4 +31,12 @@ export const postProducto = async (dueño , nombre , precio , imagen) => {
     }
 }
 
+const updateProuctos = () => {
+    console.log("en proceso")
+}
+
+const Eliminar = () => {
+    console.log("en proceso")
+}
+
 

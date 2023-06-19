@@ -47,7 +47,6 @@ const Test = () => {
 
     return(
         <div>
-
             <form onSubmit={registrar}>
                 <Campo
                     valor={dueño}
