@@ -3,6 +3,8 @@ import './lateral.css'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import Productos from '../productos/Productos';
+
 
 import Pedidos from '../pedidos/Pedidos';
 import Error from '../error/Error';
@@ -36,7 +38,7 @@ const Lateral = ({cambio}) => {
                 <ul>
                     <li onClick={() => cambio(<Inicio/>)} >Inicio</li> {/* Bradon */}
                     <li onClick={() => cambio(<Pedidos/>)}>Pedidos</li>
-                    <li onClick={() => cambio(<Error/>)}>Productos</li>
+                    <li onClick={() => cambio(<Productos/>)}>Productos</li>
                     <li onClick={() => cambio(<Clientes/>)}>Clientes</li>
                     <li>Contenido</li>
                     <li>Informe de estadistica</li>
