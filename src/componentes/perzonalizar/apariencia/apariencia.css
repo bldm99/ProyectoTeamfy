@@ -6,14 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
     background: #2E2A39BF;
     position: relative;
-    
-   
 }
 
-
-
 /*-------------Cabezera de pagina------------------------*/
-
 .apariencia .cl-cabezera{
     position: fixed;
     z-index: 1;
@@ -49,7 +44,10 @@
     list-style: none;
     display: flex;
     gap: 1.5rem;
+}
 
+.cl-header .cl-lista .icon-responive{
+    display: none;
 }
 .cl-header .cl-lista .icon-responive li{
     list-style: none;
@@ -87,10 +85,6 @@
 
 
 /*-------------Cabezera de pagina------------------------*/
-
-
-
-
 .apariencia .p-portada{
     position: relative;
     display: flex;
@@ -141,4 +135,20 @@
     font-weight: normal;
 }
 
+
+
+
+
+
+/*Modo tableta*/
+
+@media (max-width: 768px) {
+    .cl-header .cl-lista .li-s{
+        display: none;
+    }
+    .cl-header .cl-lista .icon-responive {
+        display: block;
+    }
+
+}
 

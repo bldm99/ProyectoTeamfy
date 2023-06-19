@@ -36,11 +36,12 @@ const Apariencia = ({ titu, imagen, descripcion, color }) => {
                         <h3>{titu}</h3>
                     </div>
                     <div className='cl-lista'>
+
                         <ul className='li-s' >
-                            <li>texto1</li>
-                            <li>texto1</li>
-                            <li>texto1</li>
-                            <li>texto1</li>
+                            <li>About</li>
+                            <li>Catalo</li>
+                            <li>Contacto</li>
+                            <li>Categoria</li>
                         </ul>
 
 

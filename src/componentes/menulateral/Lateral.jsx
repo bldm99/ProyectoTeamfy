@@ -11,6 +11,10 @@ import Clientes from '../clientes/Clientes'
 
 
 
+import Test from '../testing/Test';
+
+
+
 const Lateral = ({cambio}) => {
 
     /*const [com , setCom] = useState(<Pedidos/>)
@@ -38,7 +42,7 @@ const Lateral = ({cambio}) => {
                     <li>Informe de estadistica</li>
                     <li>Marketing</li>
                     <li>Descuentos</li>
-                    <li>Ver tu Tirnda Onliene</li>
+                    <li onClick={() => cambio(<Test/>)}>Ver tu Tirnda Onliene</li>
                    
                     <li><Link to={"/administrar"}>Perzonalizar Tienda</Link></li>
                     <li>Configuracion</li>
