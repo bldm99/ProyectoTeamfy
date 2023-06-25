@@ -2,7 +2,7 @@
 
 .pheader{
     color: black;
-    background: whitesmoke;
+    background-color: #e7e7e7;
     display: flex;
     flex-direction: column;
     
@@ -16,14 +16,17 @@
     
 }
 
+.pheader h3 , h4{  
+    font-size: 1.29vw; 
+    margin: 0;
+    padding: 0;
+}
+
 .pheader .textField{
     margin-top: 8px;
 }
 
-.pheader .textField h4{
-    margin: 0;
-    padding: 0;
-}
+
 
 .textField input{
     width: 100%;
@@ -32,4 +35,24 @@
     padding: 7px 5px;
     outline-color: grey;
     
+}
+
+
+
+
+
+/*Dispositivos tabletas*/
+
+@media (max-width: 768px) {
+    .pheader  h3 , h4{  
+        font-size: 12px; 
+    }
+
+}
+
+/*------------------------------Mobile-------------------------------------*/
+@media (max-width: 425px) {
+    .pheader  h3 , h4{  
+        font-size: 8px; 
+    }
 }

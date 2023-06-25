@@ -11,9 +11,12 @@ import Error from '../error/Error';
 import Inicio from '../inicio/Inicio';
 import Clientes from '../clientes/Clientes'
 
+import Html from '../testing/Html';
+
 
 
 import Test from '../testing/Test';
+import Testcliente from '../testing/Testcliente';
 
 
 
@@ -42,12 +45,12 @@ const Lateral = ({cambio}) => {
                     <li onClick={() => cambio(<Clientes/>)}>Clientes</li>
                     <li>Contenido</li>
                     <li>Informe de estadistica</li>
-                    <li>Marketing</li>
+                    <li onClick={() => cambio(<Html/>)}  >Marketing</li>
                     <li>Descuentos</li>
                     <li onClick={() => cambio(<Test/>)}>Ver tu Tirnda Onliene</li>
                    
                     <li><Link to={"/administrar"}>Perzonalizar Tienda</Link></li>
-                    <li>Configuracion</li>
+                    <li onClick={() => cambio(<Testcliente/>)}   >Configuracion</li>
                     
 
                 </ul>
