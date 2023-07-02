@@ -1,4 +1,6 @@
 
+import './campo.css'
+
 const Campo = (props) => {
 
     const {valor , place , actualizarvalor , obligatorio , tipo} = props

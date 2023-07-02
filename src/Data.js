@@ -141,7 +141,7 @@ export const buscarProductos = async (_id, xset) => {
                     _id
                 }
             });
-            console.log(response.data)
+            //console.log(response.data)
             xset(response.data)
             return response.data
         } catch (error) {
@@ -191,8 +191,15 @@ export const buscarClientes = async (_id, xset) => {
 
 /*---------------------------------------Seccion Pedidos------------------------------------------- */
 
-//Registrar clientes del usuario
-export const postPedidos = async (_id, correo_cliente,nombre_producto, imagen_producto,precio_producto ,direccion,cantidad,estado) => {
+export const postPedidos = async (_id, correo_cliente,nombre_producto, imagen_producto,precio_producto ,direccion,cantidad,estado , navigate) => {
+    
+    
+    if (!localStorage.getItem("token")) {
+        console.log("No se ha iniciado sesión");
+        navigate("/test");
+        return;
+    }
+
     try {
         await axios.post(`${URLtest}pedido`, {
             _id,
