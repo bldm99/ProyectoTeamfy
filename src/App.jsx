@@ -65,10 +65,10 @@ function App() {
           <Route path="/administrar/*" element={<><Menu /><Pagina /></>} />
         </Route>
 
-        <Route element={<PrivateWrapperTeamfy />} >
+        {/*<Route element={<PrivateWrapperTeamfy />} >
           <Route path="/*" element={<><Menu /><Cuerpo /></>} />
-        </Route>
-
+        </Route>*/}
+        <Route path="/*" element={<><Menu /><Cuerpo /></>} />
 
         <Route path="/test/*" element={<Eregister />} />
         <Route path="/paginaexplorer/" element={<><Ecomerce /></>} />
