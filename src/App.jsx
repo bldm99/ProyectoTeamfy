@@ -22,6 +22,7 @@ import Compra from './componentes/ecomerce/Compra/Compra'
 import Eregister from './componentes/ecomerce/Compra/Eregister'
 
 import Login from './componentes/login/Login'
+import Planoro from './componentes/Planes/PlanOro/Planoro';
 
 
 //Control de usuario de la tienda del cliente
@@ -75,6 +76,7 @@ function App() {
 
         <Route path="/login/*" element={<Login />} />
 
+        <Route path="/planoro/*" element={<Planoro />} />
       </Routes>
     </BrowserRouter>
   )

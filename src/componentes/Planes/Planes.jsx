@@ -1,5 +1,8 @@
 import "./Planes.css"
-import planoro from "./Plan Oro/planoro"
+import { Link } from "react-router-dom"
+import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+
 import calaveraoro from '/Users/Fabeto/Desktop/TAREAS/Proyecto Integrador/ProyectoTeamfy/src/componentes/Planes/calaveraoro.jpg';
 import calaverabronce from '/Users/Fabeto/Desktop/TAREAS/Proyecto Integrador/ProyectoTeamfy/src/componentes/Planes/calaverabronce.jpg';
 import calaveraplata from '/Users/Fabeto/Desktop/TAREAS/Proyecto Integrador/ProyectoTeamfy/src/componentes/Planes/calaveraplata.jpg';
@@ -21,11 +24,9 @@ const Planes = () => {
                             alt="Imagen Oro"
                             className="plan__imagen"
                         />
-                       <a href= {<planoro />} >
-                            <button type="submit" className="caja_btn">
-                                Ver Detalles
-                            </button>
-                        </a>
+                        <li><Link to={'/detallesplanoro'}><button type="submit" className="caja_btn">
+                            Ver Detalles
+                        </button></Link></li>
                     </div>
                 </div>
             </div>
@@ -55,7 +56,7 @@ const Planes = () => {
                             alt="Imagen Oro"
                             className="plan__imagen"
                         />
-                         <a href= {<planoro />} >
+                        <a href={<planoro />} >
                             <button type="submit" className="caja_btn">
                                 Ver Detalles
                             </button>
