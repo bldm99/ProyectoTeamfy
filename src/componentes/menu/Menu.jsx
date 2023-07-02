@@ -11,12 +11,37 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';  //boton icono 
 import SearchIcon from '@mui/icons-material/Search';
 
+import { useState, useEffect } from 'react';
+import * as Datareact from "../../Datareact"
+
 //importando componentes
 import Nosotros from '../Planes/Planes';
 import Planes from '../Planes/Planes';
 
 
 const Menu = () => {
+
+    const [userteamfy, setUserteamfy] = useState("")
+
+
+    useEffect(() => {
+
+        try {
+            const optener = async () => {
+
+                const xuser = Datareact.obtenerInfoTeamfy()
+                setUserteamfy(xuser)
+                console.log(xuser)
+            }
+            optener()
+        } catch (error) {
+            console.log(error)
+        }
+
+    }, [])
+
+
+
     return (
         <section className="menu">
             <Link to={'/'}>
@@ -54,6 +79,13 @@ const Menu = () => {
 
             <nav className='navigator'>
                 <ul className="menu-lista">
+
+                    <li className="menu__list__item itm1">
+                        <a to="/dd">{userteamfy}</a>
+                        <Nosotros />
+
+                    </li>
+
                     <li className="menu__list__item itm1">
                         <a to="/djfsdf">Planes</a>
                         <Planes />

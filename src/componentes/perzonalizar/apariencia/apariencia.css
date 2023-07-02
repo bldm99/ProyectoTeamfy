@@ -18,11 +18,13 @@
 
 /*-------------Cabezera de pagina------------------------*/
 .apariencia .cl-cabezera {
-    position: sticky;
-    top: 0;
+    position: fixed;
+    /*top: 0;*/
     z-index: 1;
-    /*width: 74%;*/
+    width: 74%;
+    
     box-sizing: border-box;
+    
 
 }
 

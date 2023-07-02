@@ -103,7 +103,7 @@ const Apariencia = ({ titu, imagen, descripcion, color }) => {
 
 
 
-                <div className='apmenu' style={{ color: "black" }}>
+                <div className='apmenu' style={{ color: "red" }}>
                     {mostrarmenu && <Apmenu />}
                 </div>
 

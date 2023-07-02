@@ -1,0 +1,121 @@
+.Eapariencia {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e7e7e7;
+    position: relative;
+    width: 100%;
+
+
+}
+
+
+/*-------------Cabezera de pagina------------------------*/
+.Eapariencia .Ep-portada {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    background: red;
+}
+
+.Ep-portada img {
+    width: 100%;
+    /* Opcional, si deseas ajustar la altura también */
+    height: 550px;
+    object-fit: cover;
+}
+
+
+.Eapariencia .Ep-portada .Edesc {
+    position: absolute;
+    width: 50%;
+    background: rgba(0, 3, 0, 0.7);
+}
+
+
+.Eapariencia .Ecl-contenido {
+    padding: 10px;
+    color: black;
+}
+
+.Ecl-contenido .Econtenido-producto {
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit,minmax(min(250px , 100%) ,1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.Ecl-contenido .Ecaja-p {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Agrega una sombra sutil a la tarjeta */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Ecl-contenido .Ecaja-p:hover {
+    transform: translateY(-5px);
+}
+
+.Ecaja-p img {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.Ecaja-p .Ea-informacion {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.Ecaja-p .Enom {
+    color: #252525;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.Ecaja-p .Enom h3 {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    /* Establece el grosor de la fuente del encabezado h3 en 400 */
+    font-size: 18px;
+}
+
+.Ecaja-p .Enom p {
+    color: #777777;
+    /* Establece el color del texto de párrafo en #777777 */
+    font-size: 14px;
+    /* Establece el tamaño de la fuente del párrafo en 14px */
+    margin: 0;
+    padding: 0;
+    /* Elimina los márgenes superiores e inferiores del párrafo */
+    transition: color 0.3s ease;
+    /* Aplica una transición suave de color con una duración de 0.3s */
+}
+
+.Ecaja-p .Enom h4 {
+    font-weight: normal;
+}
+
+
+
+
+
+
+/*Modo tableta*/
+
+@media (max-width: 768px) {
+    
+
+}
