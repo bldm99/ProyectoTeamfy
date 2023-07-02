@@ -19,14 +19,18 @@ const PHeader = ({ xtitulo, ximagen , xdescripcion , xcolor , xtinte }) => {
         xtitulo(event.target.value)
     }
 
-    const handleImageChange = (event) => {
+    const actualizarImagen = (event) => {
+        ximagen(event.target.value)
+    }
+
+    /*const handleImageChange = (event) => {
         const file = event.target.files[0];
         const reader = new FileReader();
         reader.onload = (e) => {
             ximagen(e.target.result);
         };
         reader.readAsDataURL(file);
-    };
+    };*/
 
     const actualizarDescripcion = (event) => {
         xdescripcion(event.target.value)
@@ -46,9 +50,16 @@ const PHeader = ({ xtitulo, ximagen , xdescripcion , xcolor , xtinte }) => {
                     />
                 </div>
 
-                <div className='textField'>
+                {/*<div className='textField'>
                     <h4>Selecione su imagen de portada</h4>
                     <input type="file" accept="image/*" onChange={handleImageChange} />
+                </div>*/}
+
+                <div className='textField'>
+                    <h4>CArgue una imagen URL</h4>
+                    <input type="text"
+                        onChange={actualizarImagen}
+                    />
                 </div>
 
                 <div className='textField'>

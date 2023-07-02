@@ -2,33 +2,270 @@
 
 import axios from "axios";
 
-const URL = 'https://teamapi.bladimirchipana.repl.co/'
 
-export const Viewproductos = async (xpermiso , xset) => {
-    if(xpermiso === 'abc123'){
+//var idLogeado = "64936e483562954d54515f92"  Local
+var idLogeado = "64979d173f4f94805507eb4e"    //nube
+
+//const URL = 'https://teamapi.bladimirchipana.repl.co/'
+
+
+//URL = 'https://teamapi-1.bladimirchipana.repl.co/'
+
+// api en la nube = 'https://teamapi-1.bladimirchipana.repl.co/'
+// api Loccal    = 'http://localhost:3000/'
+
+
+const URLtest = 'https://teamapi-1.bladimirchipana.repl.co/'
+
+//const URLTml = 'http://localhost:3000/'
+
+
+//Bucar todos los productos del usario que esta logueado
+//const URLBuscar = 'http://localhost:3000/userpr'
+
+
+
+//Ver todos los datos de usuario
+export const viewUsers = async (xpermiso, xset) => {
+    if (xpermiso === 'abc123') {
         try {
-            const respuesta = await axios.get(`${URL}pruebas`)
+            const respuesta = await axios.get(`${URLtest}pruebas`)
             xset(respuesta.data)
             return respuesta.data
         } catch (error) {
             console.log(error)
         }
-    }else{
+    } else {
         console.log("No tienes acceso")
-    } 
+    }
 }
 
-export const postProducto = async (dueño , nombre , precio , imagen) => {
+export const unico = async (id, xset) => {
     try {
-        await axios.post(`${URL}pruebas` , {
-            dueño ,
-            nombre ,
-            precio ,
-            imagen
+        const t = await axios.get(`${URLtest}pruebas/${id}`);
+        xset(t.data)
+        //console.log(t.data)
+        return t.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+//Registar  usuarios e inicializar su sus prosductos
+export const postUsers = async (dueño, d_email, telefono, tarjeta, suscripcion, total_productos) => {
+    try {
+        await axios.post(`${URLtest}pruebas`, {
+            dueño,
+            d_email,
+            telefono,
+            tarjeta,
+            suscripcion,
+            total_productos
         })
     } catch (error) {
         console.log(error)
     }
 }
+
+export const buscarUsuario = async (id) => {
+    try {
+        const t = await axios.get(`${URLtest}pruebas/${id}`);
+        return t.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+export const actualizarUsuario = async (id, dueño, d_email, telefono, tarjeta, suscripcion, total_productos) => {
+    try {
+        await axios.put(`${URLtest}pruebas/${id}`, {
+            dueño,
+            d_email,
+            telefono,
+            tarjeta,
+            suscripcion,
+            total_productos
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+
+
+
+//Registrar paginaHTml del usuarioo
+export const postPagina = async (_id, paginahtml) => {
+    try {
+        await axios.post(`${URLtest}paginaHtml`, {
+            _id,
+            paginahtml
+        });
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+
+/*---------------------------------------Seccion Productos------------------------------------------- */
+//Registrar productos del usuario
+export const postProductos = async (_id, nombre, precio, imagen, stock, f_Inicio, f_Final , descripcion) => {
+    try {
+        await axios.post(`${URLtest}data`, {
+            _id,
+            nombre,
+            precio,
+            imagen,
+            stock,
+            f_Inicio,
+            f_Final,
+            descripcion
+        });
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+////Bucar todos los productos del usario que esta logueado
+export const buscarProductos = async (_id, xset) => {
+    if (_id === idLogeado) {
+        try {
+            const response = await axios.get(`${URLtest}userpr`, {
+                params: {
+                    _id
+                }
+            });
+            console.log(response.data)
+            xset(response.data)
+            return response.data
+        } catch (error) {
+            console.log(error)
+        }
+    } else {
+        console.log("No tienes acceso")
+    }
+}
+
+/*---------------------------------------Seccion Clientes------------------------------------------- */
+//Registrar clientes del usuario
+export const postClientes = async (_id, correo, password, pais) => {
+    try {
+        await axios.post(`${URLtest}cliente`, {
+            _id,
+            correo,
+            password,
+            pais
+        });
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+//Buscar todos los Clientes del usario que esta logueado
+export const buscarClientes = async (_id, xset) => {
+    if (_id === idLogeado) {
+        try {
+            const response = await axios.get(`${URLtest}cliente`, {
+                params: {
+                    _id
+                }
+            });
+            console.log(response.data)
+            xset(response.data)
+            return response.data
+        } catch (error) {
+            console.log(error)
+        }
+    } else {
+        console.log("No tienes acceso")
+    }
+}
+
+
+/*---------------------------------------Seccion Pedidos------------------------------------------- */
+
+//Registrar clientes del usuario
+export const postPedidos = async (_id, correo_cliente,nombre_producto, imagen_producto,precio_producto ,direccion,cantidad,estado) => {
+    try {
+        await axios.post(`${URLtest}pedido`, {
+            _id,
+            correo_cliente,
+            nombre_producto,
+            imagen_producto,
+            precio_producto,
+            direccion,
+            cantidad,
+            estado,
+        });
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+//Buscar todos los Pedidos hechos del usario que esta logueado
+export const buscarPedidos= async (_id, xset) => {
+    if (_id === idLogeado) {
+        try {
+            const response = await axios.get(`${URLtest}pedidos`, {
+                params: {
+                    _id
+                }
+            });
+            console.log(response.data)
+            xset(response.data)
+            return response.data
+        } catch (error) {
+            console.log(error)
+        }
+    } else {
+        console.log("No tienes acceso")
+    }
+}
+
+//Buscar un unico pedido segun su id
+export const buscarPedido = async (_id, pedidoId, xset) => {
+    if (_id === idLogeado) {
+        try {
+            const response = await axios.get(`${URLtest}pedido`, {
+                params: {
+                    _id,
+                    pedidoId
+                }
+            });
+            const data = response.data;
+            //console.log(data);
+            xset(data);
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
+    } else {
+        console.log("No tienes acceso");
+    }
+};
+
+//Actualizar Pedido unico   Ene ste caso solo sera necesario actulizar el campo de estado
+export const actualizarPedido = async (_id, pedidoId, estado) => {
+    try {
+      const response = await axios.put(`${URLtest}pedido`, {
+        _id,
+        pedidoId,
+        estado
+        
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
 

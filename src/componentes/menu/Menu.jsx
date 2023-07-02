@@ -12,7 +12,9 @@ import IconButton from '@mui/material/IconButton';  //boton icono
 import SearchIcon from '@mui/icons-material/Search';
 
 //importando componentes
-import Nosotros from '../lista/Nosotros';
+import Nosotros from '../Planes/Planes';
+import Planes from '../Planes/Planes';
+
 
 const Menu = () => {
     return (
@@ -41,7 +43,7 @@ const Menu = () => {
                         InputProps={{
                             endAdornment: (
                                 <InputAdornment position="end">
-                                    <SearchIcon />
+                                <SearchIcon />
                                 </InputAdornment>
                             ),
                         }}
@@ -53,15 +55,11 @@ const Menu = () => {
             <nav className='navigator'>
                 <ul className="menu-lista">
                     <li className="menu__list__item itm1">
-                        <a to="/dd">Nosotros</a>
-                        <Nosotros />
+                        <a to="/djfsdf">Planes</a>
+                        <Planes />
 
                     </li>
-                    <li className="menu__list__item itm1">
-                        <a to="/djfsdf">Planes</a>
-                        <Nosotros />
-                    </li>
-                    <li className="menu__list__item itm1">
+                    <li className="menu__list__item itm3">
                         <a to="/sobre">Ofertas Especiales</a>
                         <Nosotros />
                     </li>

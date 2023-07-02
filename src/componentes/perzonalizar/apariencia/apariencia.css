@@ -1,56 +1,73 @@
+<<<<<<< HEAD
 
 
 
 
 .apariencia{
+=======
+.apariencia {
+>>>>>>> 053792d2355894c00a86d13c56c157d2f4c9e2e1
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    background: #2E2A39BF;
+    background-color: #e7e7e7;
     position: relative;
+    width: 100%;
+
+
 }
 
 /*-------------Cabezera de pagina------------------------*/
-.apariencia .cl-cabezera{
-    position: fixed;
+.apariencia .cl-cabezera {
+    position: sticky;
+    top: 0;
     z-index: 1;
-    width: 74%;
+    /*width: 74%;*/
+    box-sizing: border-box;
+
 }
-.apariencia .cl-cabezera .apmenu{
+
+.apariencia .cl-cabezera .apmenu {
     background: white;
     margin-top: -18px;
 }
-.apariencia .cl-header{
+
+.apariencia .cl-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 3px;
 }
-.cl-header .cl-titulo{
+
+.cl-header .cl-titulo {
     display: flex;
     align-items: center;
 }
-.cl-titulo img{
+
+.cl-titulo img {
     width: 50px;
     height: 50px;
 }
 
-.cl-header .cl-lista{
+.cl-header .cl-lista {
     display: flex;
     align-items: center;
+
 }
 
-.cl-header .cl-lista .li-s{
+.cl-header .cl-lista .li-s {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     gap: 1.5rem;
+
 }
 
-.cl-header .cl-lista .icon-responive{
+.cl-header .cl-lista .icon-responive {
     display: none;
 }
-.cl-header .cl-lista .icon-responive li{
+
+.cl-header .cl-lista .icon-responive li {
     list-style: none;
 }
 
@@ -62,8 +79,9 @@
     flex-direction: column;
     cursor: pointer;
     padding-right: 5px;
-    
+
 }
+
 .icon_menu span {
     width: 100%;
     height: 22px;
@@ -72,13 +90,16 @@
     transform-origin: 0px 100%;
     transition: all 300ms;
 }
+
 .a {
     transform: rotate(45deg)translate(-2px, -5px);
 }
+
 .b {
     opacity: 0;
     margin-left: -30px;
 }
+
 .c {
     transform: rotate(-45deg)translate(6px, 1px);
 }
@@ -86,53 +107,86 @@
 
 
 /*-------------Cabezera de pagina------------------------*/
-.apariencia .p-portada{
+.apariencia .p-portada {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.apariencia .p-portada .desc{
+.apariencia .p-portada .desc {
     position: absolute;
     width: 50%;
-    background: rgba(0, 3, 0, 0.7) ; 
+    background: rgba(0, 3, 0, 0.7);
 }
 
 
-.apariencia .cl-contenido{
+.apariencia .cl-contenido {
     padding: 10px;
     color: black;
 }
 
-.cl-contenido .contenido-producto{
+.cl-contenido .contenido-producto {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(min(250px , 100%) ,1fr)); 
+    /*grid-template-columns: repeat(auto-fit,minmax(min(250px , 100%) ,1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
     gap: 15px;
     justify-content: space-around;
-    align-items: center; 
-    
+    align-items: center;
+
 }
 
-.cl-contenido .caja-p{
+.cl-contenido .caja-p {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Agrega una sombra sutil a la tarjeta */
+    transition: transform 0.3s ease;
+    cursor: pointer;
     width: 100%;
-    padding: 1px;
-    box-sizing: border-box;  
+    border-radius: 5px;
+    padding: 2px 4px;
+    box-sizing: border-box;
     text-align: center;
 }
 
-.caja-p img{
-    width: 100%;
-    box-sizing: border-box;
+.cl-contenido .caja-p:hover {
+    transform: translateY(-5px);
 }
 
-.caja-p .nom h3 ,h4{
-    padding: 0;
-    margin: 0;
+.caja-p img {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
-.caja-p .nom h4{
+
+.caja-p .a-informacion{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.caja-p .nom {
+    color: #252525;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.caja-p .nom h3 {
+    padding: 0;
+    margin: 0; 
+    font-weight: 400;                               /* Establece el grosor de la fuente del encabezado h3 en 400 */
+    font-size: 18px; 
+}
+.caja-p .nom p {
+    color: #777777;                                 /* Establece el color del texto de párrafo en #777777 */
+    font-size: 14px;                                /* Establece el tamaño de la fuente del párrafo en 14px */
+    margin: 0;  
+    padding: 0;                                    /* Elimina los márgenes superiores e inferiores del párrafo */
+    transition: color 0.3s ease;                    /* Aplica una transición suave de color con una duración de 0.3s */
+  }
+
+.caja-p .nom h4 {
     font-weight: normal;
 }
 
@@ -144,12 +198,12 @@
 /*Modo tableta*/
 
 @media (max-width: 768px) {
-    .cl-header .cl-lista .li-s{
+    .cl-header .cl-lista .li-s {
         display: none;
     }
+
     .cl-header .cl-lista .icon-responive {
         display: block;
     }
 
 }
-

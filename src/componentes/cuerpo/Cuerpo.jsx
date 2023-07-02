@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react';
 const Cuerpo = () => {
 
     //El componete cuerpo en princio mostrara el comp <Contenido/>
-    const [componente, setComponete] = useState(<Contenido/>);
+    const [componente, setComponete] = useState(<Inicio/>);
 
     //Componete lateral , muestra un barra lateral
     const [lateral, seLateral] = useState(() => Lateral);

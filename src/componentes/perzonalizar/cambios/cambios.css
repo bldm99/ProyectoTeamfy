@@ -27,8 +27,8 @@
 
 
 
-.cam .cajas{
-    /*background: red;*/
+.cam .cajas h2{
+    font-size: 2vw;
 }
 
 
@@ -49,7 +49,7 @@
         margin-top: 0;
     }
     .cam .cajas h2{
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
 }

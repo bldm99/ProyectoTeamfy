@@ -1,22 +1,188 @@
+/* Estilos generales */
+.slider {
+  width: 100%;
+  height: 500px;
+  background-color: #000;
+  position: relative;
+}
+
+.slider-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.slider-image img {
+  width: 500px;
+  height: 300px;
+}
+
+.slider-text {
+  width: 50%;
+  color: #fff;
+}
+
+.slider-text h1 {
+  font-size: 50px;
+}
+
+.slider-text p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.slider-button {
+  background-color: yellow;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 40px;
+  font-size: 16px;
+}
 
 
-.cont-image{ 
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(min(350px , 100%) ,1fr)); 
-    padding: 1rem;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    
-   
+/* Estilos para la sección "inicio-equipo" */
+.inicio-equipo {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inicio-titulo {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.inicio-integrantes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.integrante {
+  border: 2px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.integrante:hover {
+  transform: scale(1.1);
+}
+
+.integrante h3 {
+  margin-bottom: 10px;
+}
+
+.integrante img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.integrante .inicio-button {
+  margin-top: 10px;
+  background-color: yellow;
+  border-radius: 10px;
+  padding: 10px 40px;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+.integrante .inicio-button:hover {
+  background-color: rgb(246, 255, 0);
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+/* Estilos para la sección "quienes-somos" */
+.quienes-somos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.quienes-somos-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.quienes-somos h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.quienes-somos p {
+  margin-bottom: 10px;
+  width: 250px;
+  height: 250px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+
+.quienes-somos img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 
 
-.cont-image img{
+/* Estilos Responsive */
+@media (max-width: 768px) {
+  .slider-content {
+    flex-direction: column;
+  }
+
+  .slider-image img {
     width: 100%;
-    
+    height: auto;
+  }
+
+  .slider-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .inicio-integrantes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .inicio-integrantes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-title {
+  font-size: 24px;
+}
+
+.footer-line {
+  margin: 10px 0;
+  border-top: 2px solid #fff;
+}
+
+.footer-text {
+  font-size: 16px;
 }
