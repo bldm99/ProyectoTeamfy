@@ -4,11 +4,15 @@ import jwt_decode from "jwt-decode";
 
 const UR = "http://localhost:3000/"
 
+const URLfinal = "https://teamapi.bladimirchipana.repl.co/"
 
 export const userRegister = async (_id, correo, password, pais, navigate) => {
+    const token = localStorage.getItem("tokenTeam");
+    const decodedToken = jwt_decode(token);
+    const uid = decodedToken?.uid;
     try {
-        const response = await axios.post(`${UR}register`, {
-            _id,
+        const response = await axios.post(`${URLfinal}register`, {
+            _id: uid,
             correo,
             password,
             pais

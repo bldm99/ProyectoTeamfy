@@ -27,7 +27,9 @@ const Compra = () => {
 
     useEffect(() => {
         const optener = async () => {
-            const res = await buscarProducto(idLogeado, id, setProducto)
+            const datmaster = Datareact.obtenerInfoTeamfy()
+            //const res = await buscarProducto(idLogeado, id, setProducto)
+            const res = await buscarProducto(datmaster.uid, id, setProducto)
             const xcorreo = Ecom.obtenerInfo()
             setCorreologeado(xcorreo)
         }

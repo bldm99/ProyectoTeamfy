@@ -32,6 +32,7 @@ const Menu = () => {
                 const xuser = Datareact.obtenerInfoTeamfy()
                 setUserteamfy(xuser)
                 console.log(xuser)
+                
             }
             optener()
         } catch (error) {
@@ -81,7 +82,7 @@ const Menu = () => {
                 <ul className="menu-lista">
 
                     <li className="menu__list__item itm1">
-                        <a to="/dd">{userteamfy}</a>
+                        <a to="/dd">{userteamfy?.useremail}</a>
                         <Nosotros />
 
                     </li>

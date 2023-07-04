@@ -23,6 +23,10 @@ const Pagina = () => {
     const pagina = Datareact.buscarPaginaReact
     const actualizarPagina = Datareact.actualizarPaginaReact
 
+    const [userteamfy, setUserteamfy] = useState("")
+    const [idp , setIdp] = useState([])
+
+
 
     const [user, setUser] = useState([])
     const [datapagina, setDatapagina] = useState([])
@@ -36,7 +40,12 @@ const Pagina = () => {
     useEffect(() => {
         const obtenerdata = async () => {
             try {
-                const ty = await pagina(idLogeado, idpagina, setDatapagina)
+                const idteam = Datareact.obtenerInfoTeamfy()
+                setUserteamfy(idteam.uid)
+
+                const idPagina = Datareact.buscarPaginaReact(idteam.uid , setIdp)
+
+                const ty = await pagina(idteam.uid, setDatapagina)
                 setTitulo(ty.titulo)
                 setDescripcion(ty.descripcion)
                 setSelectedImage(ty.banner)
@@ -51,8 +60,8 @@ const Pagina = () => {
 
     const modificar = async () => {
         await actualizarPagina(
-            idLogeado,
-            idpagina,
+            userteamfy,
+            idp._id,
             titulo ,
             selectedImage,
             descripcion,
@@ -72,7 +81,7 @@ const Pagina = () => {
 
 
             <div className='cambios'>
-                <button onClick={() => { modificar() }}  >Guardar Cambios</button>
+                <button onClick={() => { modificar() }}  >Guardar{idp._id} Cambios</button>
                 <Cambios
                     xtitulo={setTitulo}
                     ximagen={setSelectedImage}

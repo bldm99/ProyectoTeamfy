@@ -1,19 +1,26 @@
 
 import { useState, useEffect } from 'react';
 import * as Data from '../../Data';
+import *as Datareact from '../../Datareact'
 
 import Campo from '../CampoFormulario/Campo';
 
 const Test = () => {
 
+    /////////////////////////////////////
+
+    /////////////////////////////////////
+    
+
 
     //var idLogeado = "64936e483562954d54515f92"  Local
     var idLogeado = "64979d173f4f94805507eb4e"    //nube
-    
 
-    const [edit , setEdit] = useState(true)
-    
-    
+
+    const [edit, setEdit] = useState(true)
+    const [userteamfy, setUserteamfy] = useState("")
+
+
 
     const postUsers = Data.postUsers //Registrar usarios e inicializar
     const viewUsers = Data.viewUsers //Ver Get todo
@@ -44,6 +51,8 @@ const Test = () => {
     const [f_Inicio, setInicio] = useState("")
     const [f_Final, setFinal] = useState("")
     const [descripcion, setDescripcion] = useState("")
+    const [html, setHtmln] = useState("")
+    const [sku, setSku] = useState("")
 
     //console.log(edit)
 
@@ -52,8 +61,12 @@ const Test = () => {
             try {
                 const x = await viewUsers('abc123', setDatausers)
 
-                const product = await buscarProductos(idLogeado , setDataproductos)
-                //console.log(product)
+                
+                const idteam = Datareact.obtenerInfoTeamfy()
+                
+                //const product = await buscarProductos(idLogeado, setDataproductos)
+                const product = await buscarProductos(idteam.uid, setDataproductos)
+                setUserteamfy(idteam.uid)
             } catch (error) {
                 console.log(error)
             }
@@ -68,16 +81,16 @@ const Test = () => {
     const registrar = async (event) => {
         event.preventDefault()
         try {
-            if(edit){
+            if (edit) {
                 await postUsers(dueño, d_email, telefono, tarjeta, suscripcion, total)
                 limpiar()
-                await viewUsers('abc123', setDatausers);     
-            }else{
-                await actualizarUsuario( idLogeado ,dueño, d_email, telefono, tarjeta, suscripcion, total)
+                await viewUsers('abc123', setDatausers);
+            } else {
+                await actualizarUsuario(idLogeado, dueño, d_email, telefono, tarjeta, suscripcion, total)
                 limpiar()
-                await viewUsers('abc123', setDatausers);     
+                await viewUsers('abc123', setDatausers);
             }
-            
+
         } catch (error) {
             console.log(error)
         }
@@ -88,9 +101,9 @@ const Test = () => {
     const registrarx = async (event) => {
         event.preventDefault()
         try {
-            await postProductos(idLogeado,nombre , precio , imagen , stock , f_Inicio , f_Final , descripcion)
+            await postProductos(userteamfy, nombre, precio, imagen, stock, f_Inicio, f_Final, descripcion , html , sku)
             //await viewUsers('abc123', setDatausers);
-            await buscarProductos(idLogeado , setDataproductos)
+            await buscarProductos(userteamfy, setDataproductos)
             console.log("Producto registrado")
         } catch (error) {
             console.log(error)
@@ -109,17 +122,17 @@ const Test = () => {
         setTarjeta(datosx.tarjeta)
         setSuscripcion(datosx.suscripcion)
         setTotal(datosx.total_productos)
-        setEdit(!edit ) //false 
+        setEdit(!edit) //false 
     }
 
-    
-    const limpiar = () => { 
+
+    const limpiar = () => {
         setDueño("")
         setD_email("")
         setTelefono("")
         setTarjeta("")
         setSuscripcion("")
-        setTotal("") 
+        setTotal("")
     }
 
     const buscar = async () => {
@@ -132,11 +145,11 @@ const Test = () => {
 
     return (
         <div>
-            
+
             <h4>{edit ? "Modo Registros" : "Modo Edición"}</h4>
-            <button onClick={ () =>{buscar()}}  >Buscar Productos</button>
-            
-           
+            <button onClick={() => { buscar() }}  >Buscar Productos</button>
+
+
             <form onSubmit={registrar}>
                 <Campo
                     valor={dueño}
@@ -186,9 +199,9 @@ const Test = () => {
             </form>
 
 
-           
 
-            <button onClick={ () =>{ver()}}  >mostrsr</button>
+
+            <button onClick={() => { ver() }}  >mostrsr</button>
 
             <h3>Registrar Datos embebidos</h3>
             <div>
@@ -244,31 +257,47 @@ const Test = () => {
                         tipo={'text'}
                     />
 
+                    <Campo
+                        valor={html}
+                        place={'Contenido html'}
+                        actualizarvalor={setHtmln}
+                        obligatorio
+                        tipo={'text'}
+                    />
+
+                    <Campo
+                        valor={sku}
+                        place={'Sku para identificar el producto'}
+                        actualizarvalor={setSku}
+                        obligatorio
+                        tipo={'text'}
+                    />
+
                     <button>Registrar</button>
                 </form>
 
             </div>
 
+            <div>
+                <h2>Productos listados solo  del usuario logeado</h2>
                 <div>
-                    <h2>Productos listados solo  del usuario logeado</h2>
-                    <div>
-                        {dataproductos.map((item) => (
-                            <div key={item._id}>
-                                <h5>{item.nombre}</h5>
-                                <h5>{item.precio}</h5>
-                                <h5>{item.stock}</h5>
-                                <h5>{item.f_Inicio}</h5>
-                                <h5>{item.f_Final}</h5>
-                                <h5>{item.descripcion}</h5>
-                                <img src={item.imagen} alt="Imagen" style={{ width: '50%', height: '50%' }} />  
-                            </div>   
-                        ))}
-                    </div>
+                    {dataproductos.map((item) => (
+                        <div key={item._id}>
+                            <h5>{item.nombre}</h5>
+                            <h5>{item.precio}</h5>
+                            <h5>{item.stock}</h5>
+                            <h5>{item.f_Inicio}</h5>
+                            <h5>{item.f_Final}</h5>
+                            <h5>{item.descripcion}</h5>
+                            <img src={item.imagen} alt="Imagen" style={{ width: '50%', height: '50%' }} />
+                        </div>
+                    ))}
                 </div>
+            </div>
 
-              
-                <h5>Hola mundo</h5>
-                {/*datusers.map((item) => (
+
+            <h5>Hola mundo</h5>
+            {/*datusers.map((item) => (
                     <div key={item._id}>
                         
                         <h4>{item.dueño}</h4>
@@ -291,8 +320,8 @@ const Test = () => {
                         
                     </div>
                 ))*/}
-            </div>
+        </div>
 
-            );
+    );
 }
 export default Test

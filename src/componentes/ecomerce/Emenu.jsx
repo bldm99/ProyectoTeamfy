@@ -24,7 +24,9 @@ const Emenu = () => {
     useEffect(() => {
         const obtener = async () => {
             try {
-                const page = await buscarPaginaReact(idLogeado, idpagina, setPagina)
+                const datmaster = Datareact.obtenerInfoTeamfy()
+                //const page = await buscarPaginaReact(idLogeado, idpagina, setPagina)
+                const page = await buscarPaginaReact(datmaster.uid , setPagina)
                 setColor(page.color)
                 const x = setGmail(Ecom.obtenerInfo())
                 //console.log(x)
