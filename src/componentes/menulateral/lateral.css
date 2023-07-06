@@ -17,7 +17,7 @@
   }
   
   .lateral li {
-    margin-bottom: 18px; /* Ajusta el espacio vertical entre los elementos */
+    margin-bottom: 16px; /* Ajusta el espacio vertical entre los elementos */
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     display: flex;
