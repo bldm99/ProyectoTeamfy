@@ -17,7 +17,7 @@ import * as Datareact from "../../Datareact"
 //importando componentes
 import Nosotros from '../Planes/Planes';
 import Planes from '../Planes/Planes';
-
+import logomenu from './Logo.png'
 
 
 const Menu = () => {
@@ -49,12 +49,8 @@ const Menu = () => {
             <Link to={'/'}>
                 <header>
 
-                    <img
-                        className="logo-empresa"
-                        src="https://img.freepik.com/vector-premium/plantilla-diseno-logotipo-tienda-alimentos_145155-1251.jpg"
-                        alt="Logo de Empresa"
-                    />
-                    <h1 className="titulo-empresa">Teamfy</h1>
+                <img src={logomenu} alt="" />  
+                <h1 className="titulo-empresa">Teamfy</h1>
 
                 </header>
             </Link>
