@@ -201,3 +201,73 @@ footer p {
   font-size: 16px;
   margin: 0;
 }
+.producto-actual:hover .producto-imagen {
+  transform: scale(1.1); /* Aplica un efecto de escala al pasar el mouse sobre la imagen */
+  transition: transform 0.3s ease; /* Añade una transición suave */
+}
+
+.card-product {
+  position: relative;
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  overflow: hidden;
+}
+
+.card-product:hover .producto-imagen {
+  transform: scale(1.1); /* Aplica un efecto de escala al pasar el mouse sobre la imagen */
+  transition: transform 0.3s ease; /* Añade una transición suave */
+}
+
+.card-product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Cambia el color de fondo según tus preferencias */
+  color: #fff; /* Cambia el color del texto según tus preferencias */
+  padding: 10px;
+  opacity: 0; /* Oculta la información inicialmente */
+  transition: opacity 0.3s ease; /* Añade una transición suave */
+}
+
+.card-product:hover .card-product-info {
+  opacity: 1; /* Muestra la información al pasar el mouse sobre la tarjeta */
+}
+.producto-actual {
+  position: relative;
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+  height: 300px; /* Ajusta la altura según tus necesidades */
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-product {
+  position: relative;
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+  height: 300px; /* Ajusta la altura según tus necesidades */
+  overflow: hidden;
+}
+#registrar {
+  background-color: #333; /* Cambia el color de fondo según tus preferencias */
+  color: #fff; /* Cambia el color del texto según tus preferencias */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#registrar:hover {
+  background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+}
+
+#registrar:focus {
+  outline: none; /* Elimina el contorno al hacer clic */
+}
+
+#registrar:active {
+  transform: translateY(1px); /* Aplica una ligera animación de presionado */
+}

@@ -19,6 +19,7 @@ import Nosotros from '../Planes/Planes';
 import Planes from '../Planes/Planes';
 
 
+
 const Menu = () => {
 
     const [userteamfy, setUserteamfy] = useState("")
@@ -94,7 +95,7 @@ const Menu = () => {
                     </li>
                     <li className="menu__list__item itm3">
                         <a to="/sobre">Ofertas Especiales</a>
-                        <Nosotros />
+                        <Nosotros/>
                     </li>
                 </ul>
             </nav>
