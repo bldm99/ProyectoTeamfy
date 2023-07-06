@@ -17,7 +17,6 @@
   width: 500px;
   height: 300px;
 }
-
 .slider-text {
   width: 50%;
   color: #fff;
@@ -42,8 +41,7 @@
   font-size: 16px;
 }
 
-
-/* Estilos para la sección "inicio-equipo" */
+/* Estilos para la sección "INTEGRANTES" */
 .inicio-equipo {
   text-align: center;
   margin-top: 40px;
@@ -62,44 +60,69 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.integrante {
+  position: relative;
+}
 
 .integrante {
-  border: 2px solid #ccc;
-  padding: 10px;
+  height: 300px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 10px;
   text-align: center;
   transition: transform 0.3s;
 }
+
 .integrante:hover {
   transform: scale(1.1);
 }
 
 .integrante h3 {
-  margin-bottom: 10px;
+  margin-top: 90px;
+  position: absolute;
+  color: #f0f0f0;
 }
 
 .integrante img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  padding-bottom: 175px;
 }
 
-.integrante .inicio-button {
-  margin-top: 10px;
-  background-color: yellow;
-  border-radius: 10px;
-  padding: 10px 40px;
-  font-size: 12px;
-  transition: background-color 0.3s;
+.integrante h3 strong {
+  color: rgb(255, 255, 255);
 }
 
-.integrante .inicio-button:hover {
-  background-color: rgb(246, 255, 0);
-  color: rgb(0, 0, 0);
-  font-weight: 600;
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  bottom: 10px;
+  position: absolute;
 }
+
+.logo-container img {
+
+  width: 30px;
+  height: 30px;
+  padding-bottom: 10px;
+  margin-right: 14px;
+
+}
+
+
+
+
+
+
+
+
 
 /* Estilos para la sección "quienes-somos" */
 .quienes-somos {
@@ -132,9 +155,10 @@
 
 
 .quienes-somos img {
-  width: 250px;
+  width: 325px;
   height: 250px;
   object-fit: cover;
+
 }
 
 
@@ -186,3 +210,4 @@
 .footer-text {
   font-size: 16px;
 }
+

@@ -1,7 +1,6 @@
 import "./Planes.css"
 import { Link } from "react-router-dom"
-import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+
 
 import calaveraoro from '../Planes/calaveraoro.jpg';
 import calaverabronce from '../Planes/calaverabronce.jpg';
@@ -40,7 +39,7 @@ const Planes = () => {
                             alt="Imagen Oro"
                             className="plan__imagen"
                         />
-                       <li><Link to={'/planoro'}><button type="submit" className="caja_btn">
+                       <li><Link to={'/planplata'}><button type="submit" className="caja_btn">
                             Ver Detalles
                         </button></Link></li>
                        
@@ -56,7 +55,7 @@ const Planes = () => {
                             alt="Imagen Oro"
                             className="plan__imagen"
                         />
-                        <li><Link to={'/planoro'}><button type="submit" className="caja_btn">
+                        <li><Link to={'/planbronce'}><button type="submit" className="caja_btn">
                             Ver Detalles
                         </button></Link></li>
                     </div>

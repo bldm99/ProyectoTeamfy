@@ -1,0 +1,182 @@
+.planplata-slider {
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    position: relative;
+}
+
+.planplata-slider-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 100px;
+    justify-content: center;
+}
+
+.planplata-slider-text {
+    width: 50%;
+    color: #e3e4e5;
+}
+
+.planplata-slider-text h1 {
+    font-size: 50px;
+}
+
+.planplata-slider-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para la sección "planplata-inicio-equipo" */
+.planplata-inicio-equipo {
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.planplata-inicio-titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.planplata-inicio-integrantes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.planplata-integrante {
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.planplata-integrante:hover {
+    transform: scale(1.1);
+}
+
+.planplata-integrante h3 {
+    margin-bottom: 10px;
+}
+
+.planplata-integrante img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.planplata-integrante .planplata-inicio-button {
+    margin-top: 10px;
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 10px 40px;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.planplata-integrante .planplata-inicio-button:hover {
+    background-color: rgb(246, 255, 0);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+/* Estilos para la sección "planplata-quienes-somos" */
+.planplata-quienes-somos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.planplata-quienes-somos-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.planplata-quienes-somos h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.planplata-quienes-somos p {
+    margin-bottom: 10px;
+    width: 250px;
+    height: 250px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.planplata-quienes-somos img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.planplata-button {
+    padding: 10px 20px;
+    background-color: #eabf3f;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 45%;
+    margin-top: 20px;
+}
+
+/* Estilos Responsive */
+@media (max-width: 768px) {
+    .planplata-slider-content {
+        flex-direction: column;
+    }
+
+    .planplata-slider-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .planplata-slider-text {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .planplata-inicio-integrantes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .planplata-inicio-integrantes {
+        grid-template-columns: 1fr;
+    }
+}
+
+.planplata-footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.planplata-footer-title {
+    font-size: 24px;
+}
+
+.planplata-footer-line {
+    margin: 10px 0;
+    border-top: 2px solid #fff;
+}
+
+.planplata-footer-text {
+    font-size: 16px;
+}

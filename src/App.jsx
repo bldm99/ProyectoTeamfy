@@ -22,8 +22,9 @@ import Compra from './componentes/ecomerce/Compra/Compra'
 import Eregister from './componentes/ecomerce/Compra/Eregister'
 
 import Login from './componentes/login/Login'
-import Planoro from './componentes/Planes/PlanOro/Planoro';
-
+import Planoro from './componentes/Planes/PlanOro/Planoro/';
+import Planplata from './componentes/Planes/PlanPlata/Planplata'
+import Planbronce from './componentes/Planes/PlanBronce/Planbronce'
 
 //Control de usuario de la tienda del cliente
 const PrivateWrapper = () => {
@@ -76,7 +77,9 @@ function App() {
 
         <Route path="/login/*" element={<Login />} />
 
-        <Route path="/planoro/*" element={<Planoro />} />
+        <Route path='/planoro/*' element={<> <Menu /> <Planoro /> </>} />
+        <Route path='/planplata/*' element={<> <Menu /> <Planplata /> </>} />
+        <Route path='/planbronce/*' element={<> <Menu /> <Planbronce /> </>} />
       </Routes>
     </BrowserRouter>
   )
