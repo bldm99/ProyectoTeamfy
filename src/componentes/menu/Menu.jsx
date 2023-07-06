@@ -19,6 +19,7 @@ import Nosotros from '../Planes/Planes';
 import Planes from '../Planes/Planes';
 
 
+
 const Menu = () => {
 
     const [userteamfy, setUserteamfy] = useState("")
@@ -32,6 +33,7 @@ const Menu = () => {
                 const xuser = Datareact.obtenerInfoTeamfy()
                 setUserteamfy(xuser)
                 console.log(xuser)
+                
             }
             optener()
         } catch (error) {
@@ -81,7 +83,7 @@ const Menu = () => {
                 <ul className="menu-lista">
 
                     <li className="menu__list__item itm1">
-                        <a to="/dd">{userteamfy}</a>
+                        <a to="/dd">{userteamfy?.useremail}</a>
                         <Nosotros />
 
                     </li>
@@ -93,7 +95,7 @@ const Menu = () => {
                     </li>
                     <li className="menu__list__item itm3">
                         <a to="/sobre">Ofertas Especiales</a>
-                        <Nosotros />
+                        <Nosotros/>
                     </li>
                 </ul>
             </nav>

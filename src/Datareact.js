@@ -10,17 +10,46 @@ var imagenprueba = "https://c4.wallpaperflare.com/wallpaper/834/299/692/city-lig
 //const URL = 'http://localhost:3000/paginaReact'
 const URL = 'https://teamapi-1.bladimirchipana.repl.co/'
 
-export const buscarPaginaReact = async (_id, paginaId, xset) => {
-    if (_id === idLogeado) {
+const URLfinal = "https://teamapi.bladimirchipana.repl.co/"
+
+export const buscarPaginaReact = async (_id ,  xset) => {
+    const token = localStorage.getItem("tokenTeam");
+    const decodedToken = jwt_decode(token);
+    const uid = decodedToken?.uid;
+   
+    if (_id === uid) {
         try {
-            const response = await axios.get(`${URL}paginaReact`, {
+            const response = await axios.get(`${URLfinal}paginaReact`, {
                 params: {
                     _id,
-                    paginaId
+                    
                 }
             });
             const data = response.data;
-            //console.log(data);
+            xset(data);
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
+    } else {
+        console.log("No tienes acceso");
+    }
+};
+
+export const buscarPaginaReact2 = async (_id,  xset) => {
+
+        const token = localStorage.getItem("tokenTeam");
+        const decodedToken = jwt_decode(token);
+        const uid = decodedToken?.uid;
+    
+    if (_id === uid) {
+        try {
+            const response = await axios.get(`${URLfinal}paginaReact`, {
+                params: {
+                    _id,
+                }
+            });
+            const data = response.data;
             xset(data);
             return data;
         } catch (error) {
@@ -35,7 +64,7 @@ export const buscarPaginaReact = async (_id, paginaId, xset) => {
 
 export const actualizarPaginaReact = async (_id, paginaId, titulo, banner, descripcion, color, logo, wasap) => {
     try {
-        const response = await axios.put(`${URL}paginaReact`, {
+        const response = await axios.put(`${URLfinal}paginaReact`, {
             _id,
             paginaId,
             titulo,
@@ -48,15 +77,19 @@ export const actualizarPaginaReact = async (_id, paginaId, titulo, banner, descr
         console.log(response.data);
     } catch (error) {
         console.log(error);
+        console.log(_id);
     }
 };
 
 
 /*---------------------------------------Seccion de productos--------------------------------------- */
 export const buscarProducto = async (_id, productoId, xset) => {
-    if (_id === idLogeado) {
+    const token = localStorage.getItem("tokenTeam");
+    const decodedToken = jwt_decode(token);
+    const uid = decodedToken?.uid;
+    if (_id === uid) {
         try {
-            const response = await axios.get(`${URL}data`, {
+            const response = await axios.get(`${URLfinal}data`, {
                 params: {
                     _id,
                     productoId
@@ -89,7 +122,9 @@ export function convertHexToRGB(hex) {
 
 
 
-const URLtest = "http://localhost:3000/"
+//const URLtest = "http://localhost:3000/"
+const URLtest = "https://teamapi.bladimirchipana.repl.co/"
+
 //Funciones e login y register de los clientes Teamfy
 export const registerTeamfy = async (dueño, d_email, d_password, telefono, navigate) => {
     try {
@@ -146,8 +181,11 @@ export const obtenerInfoTeamfy = () => {
         const decodedToken = jwt_decode(token);
         // Obtener el ID del token decodificado
         const useremail = decodedToken?.em;
+        const uid = decodedToken?.uid;
 
-        return useremail
+        return { useremail, uid };
+
+        //return useremail
     } catch (error) {
         console.log(error)
     }

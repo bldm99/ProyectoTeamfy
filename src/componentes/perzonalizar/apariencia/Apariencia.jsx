@@ -19,10 +19,11 @@ const Apariencia = ({ titu, imagen, descripcion, color }) => {
     var imagenprueba = "https://c4.wallpaperflare.com/wallpaper/834/299/692/city-lights-girl-moon-wallpaper-preview.jpg"
 
     const buscarProductos = Data.buscarProductos
-    const buscarPaginaReact = Datareact.buscarPaginaReact
+    //const buscarPaginaReact = Datareact.buscarPaginaReact
 
     const [productos, setProductos] = useState([])
     const [pagina, setPagina] = useState([])
+    const [p, setP] = useState([])
 
     const [animacionActiva, setAnimacionActiva] = useState(false);
     const [mostrarmenu, setMostarmenu] = useState(false)
@@ -34,9 +35,12 @@ const Apariencia = ({ titu, imagen, descripcion, color }) => {
     useEffect(() => {
         const obtenerProductos = async () => {
             try {
-                const resultado = await buscarProductos(idLogeado, setProductos)
-                console.log(resultado)
-                const page = await buscarPaginaReact(idLogeado, idpagina , setPagina)
+                //buscamos el id del que esta logeado 
+                const idteam = Datareact.obtenerInfoTeamfy()
+
+                const resultado = await buscarProductos(idteam.uid, setProductos)
+                const page = await Datareact.buscarPaginaReact(idteam.uid , setPagina)
+
             } catch (error) {
                 console.log(error)
             }

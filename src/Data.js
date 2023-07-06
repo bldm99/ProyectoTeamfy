@@ -1,5 +1,5 @@
 
-
+import jwt_decode from "jwt-decode";
 import axios from "axios";
 
 
@@ -114,9 +114,10 @@ export const postPagina = async (_id, paginahtml) => {
 
 /*---------------------------------------Seccion Productos------------------------------------------- */
 //Registrar productos del usuario
-export const postProductos = async (_id, nombre, precio, imagen, stock, f_Inicio, f_Final , descripcion) => {
+const URLfinal = "https://teamapi.bladimirchipana.repl.co/"
+export const postProductos = async (_id, nombre, precio, imagen, stock, f_Inicio, f_Final, descripcion, html, sku) => {
     try {
-        await axios.post(`${URLtest}data`, {
+        await axios.post(`${URLfinal}data`, {
             _id,
             nombre,
             precio,
@@ -124,7 +125,9 @@ export const postProductos = async (_id, nombre, precio, imagen, stock, f_Inicio
             stock,
             f_Inicio,
             f_Final,
-            descripcion
+            descripcion,
+            html,
+            sku
         });
     } catch (error) {
         console.log(error)
@@ -134,9 +137,14 @@ export const postProductos = async (_id, nombre, precio, imagen, stock, f_Inicio
 
 ////Bucar todos los productos del usario que esta logueado
 export const buscarProductos = async (_id, xset) => {
-    if (_id === idLogeado) {
+
+    const token = localStorage.getItem("tokenTeam");
+    const decodedToken = jwt_decode(token);
+    const uid = decodedToken?.uid;
+
+    if (_id === uid) {
         try {
-            const response = await axios.get(`${URLtest}userpr`, {
+            const response = await axios.get(`${URLfinal}userpr`, {
                 params: {
                     _id
                 }
@@ -191,9 +199,9 @@ export const buscarClientes = async (_id, xset) => {
 
 /*---------------------------------------Seccion Pedidos------------------------------------------- */
 
-export const postPedidos = async (_id, correo_cliente,nombre_producto, imagen_producto,precio_producto ,direccion,cantidad,estado , navigate) => {
-    
-    
+export const postPedidos = async (_id, correo_cliente, nombre_producto, imagen_producto, precio_producto, direccion, cantidad, estado, navigate) => {
+
+
     if (!localStorage.getItem("token")) {
         console.log("No se ha iniciado sesión");
         navigate("/test");
@@ -218,7 +226,7 @@ export const postPedidos = async (_id, correo_cliente,nombre_producto, imagen_pr
 }
 
 //Buscar todos los Pedidos hechos del usario que esta logueado
-export const buscarPedidos= async (_id, xset) => {
+export const buscarPedidos = async (_id, xset) => {
     if (_id === idLogeado) {
         try {
             const response = await axios.get(`${URLtest}pedidos`, {
@@ -262,17 +270,17 @@ export const buscarPedido = async (_id, pedidoId, xset) => {
 //Actualizar Pedido unico   Ene ste caso solo sera necesario actulizar el campo de estado
 export const actualizarPedido = async (_id, pedidoId, estado) => {
     try {
-      const response = await axios.put(`${URLtest}pedido`, {
-        _id,
-        pedidoId,
-        estado
-        
-      });
-      console.log(response.data);
+        const response = await axios.put(`${URLtest}pedido`, {
+            _id,
+            pedidoId,
+            estado
+
+        });
+        console.log(response.data);
     } catch (error) {
-      console.log(error);
+        console.log(error);
     }
-  };
+};
 
 
 

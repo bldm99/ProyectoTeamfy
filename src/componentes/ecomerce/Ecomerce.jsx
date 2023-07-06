@@ -35,9 +35,12 @@ const Ecomerce = () => {
     useEffect(() => {
         const obtenerProductos = async () => {
             try {
-                const resultado = await buscarProductos(idLogeado, setProductos)
+
+                const x = Datareact.obtenerInfoTeamfy()
+                const resultado = await buscarProductos(x.uid, setProductos)
                 //console.log(resultado)
-                const page = await buscarPaginaReact(idLogeado, idpagina, setPagina)
+                //const page = await buscarPaginaReact(idLogeado, idpagina, setPagina)
+                const page = await buscarPaginaReact(x.uid , setPagina)
                 //setColor(page.color)
                 
 

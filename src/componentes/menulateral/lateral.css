@@ -1,16 +1,68 @@
-
-.lateral{
-    /*background: rgb(56, 21, 21);*/
-    color: white;
-
+.lateral {
     position: fixed;
-    background: rgb(110, 56, 74);
-    width: 18%;
+    top: 0;
+    left: 0;
+    width: 220px;
     height: 100%;
-
-    
-}
-
-ul li{
+    background-color: #f1f1f1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+  
+  .lateral li {
+    margin-bottom: 16px; /* Ajusta el espacio vertical entre los elementos */
     cursor: pointer;
-}
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .lateral li:hover {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .lateral .icon {
+    margin-right: 10px;
+  }
+  
+  .lateral li a {
+    text-decoration: none;
+    color: #0a0a0a;
+  }
+  
+  .lateral li a:hover {
+    color: #fff;
+  }
+  
+  .lateral li button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .lateral li button:focus {
+    outline: none;
+  }
+  
+  #cerrar-sesion {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
