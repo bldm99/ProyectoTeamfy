@@ -94,7 +94,45 @@ const Inicio = () => {
                     </div>
                 </div>
             </div>
+            <div className="inicio-equipo">
+                <h1 className="inicio-titulo">NUESTRO EQUIPO BACKEND</h1>
+                <div className="inicio-integrantes">
+                    <div className="integrante zoom">
+                        <img src={imgprueba} alt="Imagen" />
 
+                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <div className="logo-container">
+                            <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
+                            <a href="/linke"> <img className='logo' src={logolinkedin} /></a>
+
+                        </div>
+
+                    </div>
+                    <div className="integrante zoom">
+                        <img src={imgprueba} alt="Imagen" />
+
+                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <div className="logo-container">
+                            <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
+                            <a href="/linke"> <img className='logo' src={logolinkedin} /></a>
+
+                        </div>
+
+                    </div>
+                    <div className="integrante zoom">
+                        <img src={imgprueba} alt="Imagen" />
+
+                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <div className="logo-container">
+
+                            <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
+                            <a href="/linke"> <img className='logo' src={logolinkedin} /></a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
             <br />
             <br />
             <footer className="footer">
