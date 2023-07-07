@@ -62,6 +62,8 @@ const registrarx = async (event) => {
       .catch(error => console.log(error));*/
   }, []);
 
+  console.log(dataproductos)
+
   const mostrarSiguienteProducto = () => {
     setIndiceActual((indiceActual + 1) % dataproductos.length);
   };

@@ -79,18 +79,18 @@ const Menu = () => {
                 <ul className="menu-lista">
 
                     <li className="menu__list__item itm1">
-                        <a to="/dd">{userteamfy?.useremail}</a>
+                        <Link to="/dd">{userteamfy?.useremail}</Link>
                         <Nosotros />
 
                     </li>
 
                     <li className="menu__list__item itm1">
-                        <a to="/djfsdf">Planes</a>
+                        <Link to="/djfsdf">Planes</Link>
                         <Planes />
 
                     </li>
                     <li className="menu__list__item itm3">
-                        <a to="/sobre">Ofertas Especiales</a>
+                        <Link to="/sobre">Ofertas Especiales</Link>
                         <Nosotros/>
                     </li>
                 </ul>

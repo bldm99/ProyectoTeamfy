@@ -1,5 +1,14 @@
 /* CARROUSEL */
 
+
+.xpedido .Despacho{
+  position: relative;
+  width: 100%;
+  background: greenyellow;
+  display: flex;
+  justify-content: center;
+}
+
 .carousel {
   position: relative;
   width: 100%;

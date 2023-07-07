@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import * as Data from '../../Data';
+import *as Datareact from "../../Datareact"
 
 import Campo from '../CampoFormulario/Campo';
 
@@ -25,15 +26,22 @@ const Testcliente = () => {
 
     const [unicopedido, setUnicopedido] = useState([])
 
+    const [dataclienteid , setDataclienteid] = useState("") //Permite obtener el id del dueño de la tienda
+
 
     useEffect(() => {
         const obtenercliente = async () => {
             try {
-                const a = await buscarClientes(idLogeado, setCliente)
-                console.log(a)
-                const b = await buscarPedidos(idLogeado, setPedido)
-                console.log(b)
-                const c = await buscarPedido(idLogeado, emjpedido, setUnicopedido)
+
+                // clienteTeamfy Permite obtener  datos del cliente logeado
+                const cliTeamfy = Datareact.obtenerInfoTeamfy()
+                setDataclienteid(cliTeamfy.uid)
+                //const a = await buscarClientes(idLogeado, setCliente)
+
+                const b = await buscarPedidos(cliTeamfy.uid , setPedido)
+                //console.log(b)
+
+                const c = await buscarPedido(cliTeamfy.uid, "64a75e5a272d2f69b1489755", setUnicopedido)
                 console.log(c)
             } catch (error) {
                 console.log(error)
@@ -41,6 +49,8 @@ const Testcliente = () => {
         }
         obtenercliente()
     }, [])
+
+    console.log(pedido)
 
 
     const registrarcli = async () => {
@@ -59,7 +69,7 @@ const Testcliente = () => {
     }
 
     const actualizar = async () => {
-        await actualizarPedido(idLogeado, emjpedido , "Completado")
+        await actualizarPedido(dataclienteid, "64a75e5a272d2f69b1489755" , "En espera")
     }
 
 

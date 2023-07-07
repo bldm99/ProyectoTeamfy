@@ -24,9 +24,12 @@ const Planes = () => {
                             alt="Imagen Oro"
                             className="plan__imagen"
                         />
-                        <li><Link to={'/planoro'}><button type="submit" className="caja_btn">
-                            Ver Detalles
-                        </button></Link></li>
+                        <ul>
+                            <li><Link to={'/planoro'}><button type="submit" className="caja_btn">
+                                Ver Detalles
+                            </button></Link></li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -39,10 +42,14 @@ const Planes = () => {
                             alt="Imagen Oro"
                             className="plan__imagen"
                         />
-                       <li><Link to={'/planplata'}><button type="submit" className="caja_btn">
-                            Ver Detalles
-                        </button></Link></li>
-                       
+
+                        <ul>
+                            <li><Link to={'/planplata'}><button type="submit" className="caja_btn">
+                                Ver Detalles
+                            </button></Link></li>
+                        </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -55,9 +62,12 @@ const Planes = () => {
                             alt="Imagen Oro"
                             className="plan__imagen"
                         />
-                        <li><Link to={'/planbronce'}><button type="submit" className="caja_btn">
-                            Ver Detalles
-                        </button></Link></li>
+                        <ul>
+                            <li><Link to={'/planbronce'}><button type="submit" className="caja_btn">
+                                Ver Detalles
+                            </button></Link></li>
+                        </ul>
+
                     </div>
                 </div>
             </div>

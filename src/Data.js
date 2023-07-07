@@ -16,6 +16,8 @@ var idLogeado = "64979d173f4f94805507eb4e"    //nube
 
 
 const URLtest = 'https://teamapi-1.bladimirchipana.repl.co/'
+const URLfinal = "https://teamapi.bladimirchipana.repl.co/"
+
 
 //const URLTml = 'http://localhost:3000/'
 
@@ -114,7 +116,6 @@ export const postPagina = async (_id, paginahtml) => {
 
 /*---------------------------------------Seccion Productos------------------------------------------- */
 //Registrar productos del usuario
-const URLfinal = "https://teamapi.bladimirchipana.repl.co/"
 export const postProductos = async (_id, nombre, precio, imagen, stock, f_Inicio, f_Final, descripcion, html, sku) => {
     try {
         await axios.post(`${URLfinal}data`, {
@@ -233,9 +234,12 @@ export const postPedidos = async (_id, correo_cliente, nombre_producto, imagen_p
 
 //Buscar todos los Pedidos hechos del usario que esta logueado
 export const buscarPedidos = async (_id, xset) => {
-    if (_id === idLogeado) {
+    const token = localStorage.getItem("tokenTeam");
+    const decodedToken = jwt_decode(token);
+    const uid = decodedToken?.uid;
+    if (_id === uid) {
         try {
-            const response = await axios.get(`${URLtest}pedidos`, {
+            const response = await axios.get(`${URLfinal}pedidos`, {
                 params: {
                     _id
                 }
@@ -253,9 +257,12 @@ export const buscarPedidos = async (_id, xset) => {
 
 //Buscar un unico pedido segun su id
 export const buscarPedido = async (_id, pedidoId, xset) => {
-    if (_id === idLogeado) {
+    const token = localStorage.getItem("tokenTeam");
+    const decodedToken = jwt_decode(token);
+    const uid = decodedToken?.uid;
+    if (_id === uid) {
         try {
-            const response = await axios.get(`${URLtest}pedido`, {
+            const response = await axios.get(`${URLfinal}pedido`, {
                 params: {
                     _id,
                     pedidoId
@@ -276,7 +283,7 @@ export const buscarPedido = async (_id, pedidoId, xset) => {
 //Actualizar Pedido unico   Ene ste caso solo sera necesario actulizar el campo de estado
 export const actualizarPedido = async (_id, pedidoId, estado) => {
     try {
-        const response = await axios.put(`${URLtest}pedido`, {
+        const response = await axios.put(`${URLfinal}pedido`, {
             _id,
             pedidoId,
             estado
