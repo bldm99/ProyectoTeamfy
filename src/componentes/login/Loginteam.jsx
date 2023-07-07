@@ -18,6 +18,8 @@ const Loginteam = (props) => {
         await funclogin( correo , password , navigate)
     }
 
+    
+
     return (
         <div className='componente-login'>
             <div>

@@ -199,7 +199,8 @@ export const buscarClientes = async (_id, xset) => {
 
 /*---------------------------------------Seccion Pedidos------------------------------------------- */
 
-export const postPedidos = async (_id, correo_cliente, nombre_producto, imagen_producto, precio_producto, direccion, cantidad, estado, navigate) => {
+export const postPedidos = async (_id, correo_cliente, nombre_producto, imagen_producto, precio_producto, direccion, cantidad, estado,
+    sku_p , postal , total , metodo_pago , navigate) => {
 
 
     if (!localStorage.getItem("token")) {
@@ -209,7 +210,7 @@ export const postPedidos = async (_id, correo_cliente, nombre_producto, imagen_p
     }
 
     try {
-        await axios.post(`${URLtest}pedido`, {
+        await axios.post(`${URLfinal}pedido`, {
             _id,
             correo_cliente,
             nombre_producto,
@@ -218,6 +219,11 @@ export const postPedidos = async (_id, correo_cliente, nombre_producto, imagen_p
             direccion,
             cantidad,
             estado,
+
+            sku_p ,
+            postal,
+            total,
+            metodo_pago,
         });
     } catch (error) {
         console.log(error)

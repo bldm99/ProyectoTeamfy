@@ -21,11 +21,17 @@
     background: rgba(255, 255, 255, .3);
     padding: 1rem 1.5rem;
     padding-left: calc(1rem * 3.5);
-    border-radius: 100px;
+    border-radius: 15px;
     width: 100%;
     transition: background .5s;
    
 }
+.campo .lab {
+    display: flex;
+    justify-content: start;
+    
+}
+
 
 .campo .form-item {
     position: relative;

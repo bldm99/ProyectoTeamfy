@@ -55,6 +55,7 @@ const Emenu = () => {
 
     const cerrarSesion = () => {
         Ecom.logout()
+        window.location.reload();
     }
 
     return (

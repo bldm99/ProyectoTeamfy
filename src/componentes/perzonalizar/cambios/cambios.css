@@ -1,33 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.cam{
+.cam {
+    font-family: 'Poppins', sans-serif;
     color: white;
     position: fixed;
-    /*background: red;*/
     width: 26%;
     height: 100%;
     display: grid;
-    grid-template-columns: 15% 85%;  
+    grid-template-columns: 15% 85%;
+   
+    
 }
 
 
 
-.cam .options{
+.cam .options {
     display: flex;
     justify-content: center;
-    /*padding-top: 20px;*/
+    background: rgb(0, 0, 0);
+    padding: 10px 0px;
 }
-.options .options-li{
+
+.options .options-li {
     margin: 0;
     padding: 0;
 }
-.options .options-li li{
+
+.options .options-li li {
     list-style: none;
     margin-top: 1.5rem;
 }
 
+.cam .cajas {
+    background: rgb(31, 28, 28);
+    
+}
 
-
-.cam .cajas h2{
+.cam .cajas h2 {
     font-size: 2vw;
 }
 
@@ -36,19 +45,28 @@
 /*Dispositivos tabletas*/
 
 @media (max-width: 768px) {
-    .cam{
+
+    .cam {
+        width: 50%;
+        z-index: 2;
         height: 0%;
-        grid-template-columns: 100%; 
+        grid-template-columns: 100%;
+       
     }
-    .options .options-li{
+
+    
+
+    .options .options-li {
         width: 100%;
         display: flex;
         justify-content: space-around;
     }
-    .options .options-li li{
+
+    .options .options-li li {
         margin-top: 0;
     }
-    .cam .cajas h2{
+
+    .cam .cajas h2 {
         font-size: 3vw;
     }
 

@@ -8,13 +8,42 @@
     
 }
 
+.pagina .fixp {
+    position: fixed;
+    top: 70px;
+    left: -5px;
+    padding: 10px;
+    z-index: 3;
+    display: none;
+    
+}
+
 .pagina .cambios{
-    background: rgb(36, 35, 35);
+    
+    position: relative;
+   
     
 
 }
 
 .pagina .apariencia{
     background: #eff0e8;
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pagina {
+        
+        display: grid;
+        grid-template-columns: 100%;
+        
+
+    }
+    .pagina .fixp {
+        display: flex;
+    }
+
+    
 
 }

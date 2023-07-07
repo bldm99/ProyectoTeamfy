@@ -40,11 +40,11 @@ const PHeader = ({ xtitulo, ximagen , xdescripcion , xcolor , xtinte }) => {
     return (
 
         <div className='pheader'>
-            <h3>Seccion Cabezera</h3>
+            <p>Seccion Cabezera</p>
             <hr />
             <div>
                 <div className='textField'>
-                    <h4>Editar nombre</h4>
+                    <p>Editar nombre</p>
                     <input type="text"
                         onChange={actualizarTitulo}
                     />
@@ -56,14 +56,14 @@ const PHeader = ({ xtitulo, ximagen , xdescripcion , xcolor , xtinte }) => {
                 </div>*/}
 
                 <div className='textField'>
-                    <h4>CArgue una imagen URL</h4>
+                    <p>CArgue una imagen URL</p>
                     <input type="text"
                         onChange={actualizarImagen}
                     />
                 </div>
 
                 <div className='textField'>
-                    <h4>Editar descripcion</h4>
+                    <p>Editar descripcion</p>
                     <input type="text"onChange={actualizarDescripcion} />
                 </div>
 

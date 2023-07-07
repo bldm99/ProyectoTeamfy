@@ -1,4 +1,3 @@
-
 .apariencia {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -15,9 +14,9 @@
     /*top: 0;*/
     z-index: 1;
     width: 74%;
-    
+
     box-sizing: border-box;
-    
+
 
 }
 
@@ -155,7 +154,7 @@
     border-radius: 5px;
 }
 
-.caja-p .a-informacion{
+.caja-p .a-informacion {
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -169,17 +168,23 @@
 
 .caja-p .nom h3 {
     padding: 0;
-    margin: 0; 
-    font-weight: 400;                               /* Establece el grosor de la fuente del encabezado h3 en 400 */
-    font-size: 18px; 
+    margin: 0;
+    font-weight: 400;
+    /* Establece el grosor de la fuente del encabezado h3 en 400 */
+    font-size: 18px;
 }
+
 .caja-p .nom p {
-    color: #777777;                                 /* Establece el color del texto de párrafo en #777777 */
-    font-size: 14px;                                /* Establece el tamaño de la fuente del párrafo en 14px */
-    margin: 0;  
-    padding: 0;                                    /* Elimina los márgenes superiores e inferiores del párrafo */
-    transition: color 0.3s ease;                    /* Aplica una transición suave de color con una duración de 0.3s */
-  }
+    color: #777777;
+    /* Establece el color del texto de párrafo en #777777 */
+    font-size: 14px;
+    /* Establece el tamaño de la fuente del párrafo en 14px */
+    margin: 0;
+    padding: 0;
+    /* Elimina los márgenes superiores e inferiores del párrafo */
+    transition: color 0.3s ease;
+    /* Aplica una transición suave de color con una duración de 0.3s */
+}
 
 .caja-p .nom h4 {
     font-weight: normal;
@@ -193,6 +198,11 @@
 /*Modo tableta*/
 
 @media (max-width: 768px) {
+
+    .apariencia .cl-cabezera {
+        width: 100%;
+    }
+
     .cl-header .cl-lista .li-s {
         display: none;
     }

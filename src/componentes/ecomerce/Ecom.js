@@ -29,7 +29,7 @@ export const userRegister = async (_id, correo, password, pais, navigate) => {
 
 export const userLogin = async (_id, correo, password, navigate) => {
     try {
-        const response = await axios.post(`${UR}login`, {
+        const response = await axios.post(`${URLfinal}login`, {
             _id,
             correo,
             password,

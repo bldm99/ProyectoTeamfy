@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-
+.general-lr{
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right, #c8e31d, #e7a50b);
+    padding-top: 10px;
+    width: 100%;
+    
+}
 .login-card-container{
     padding: 10px 0px;
-    background: rgb(247, 213, 20);
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,9 +19,9 @@
 }
 
 .login-card {
-    width: 45%;
+    width: 47%;
     background: rgba(255, 255, 255, .5);
-    padding: 4rem;
+    padding: 1.5rem;
     border-radius: 10px;
     position: relative;
     box-sizing: border-box;
@@ -23,7 +30,6 @@
 
 .login-card::before {
     content: '';
-    position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, .15);
     transform: rotate(-6deg);
@@ -32,7 +38,7 @@
 }
 
 .login-card-logo {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .login-card-logo img {
@@ -55,7 +61,7 @@
 }
 
 .login-card-header {
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
 }
 
 .login-card-header h1 {
@@ -72,7 +78,7 @@
 .login-card-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 10px;
 }
 
 .login-card-form .form-item {
@@ -102,7 +108,7 @@
 }
 
 .login-card-footer {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-size: calc(1rem * .8);
 }
 
@@ -188,29 +194,12 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-
-    body {
-        padding: 2rem 0;
-    }
-
     .login-card {
-        width: 280px;
-        padding: 2rem;
+        width: 80%; 
+        padding: 10px;  
     }
-
 }
 
- *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-    display: revert;
-}
-
-/**,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin-top: 2px;
-
-}*/
 
 a, button {
     cursor: revert;
@@ -233,9 +222,7 @@ input, textarea {
     -webkit-user-select: auto;
 }
 
-textarea {
-    white-space: revert;
-}
+
 
 meter {
     -webkit-appearance: revert;
@@ -260,4 +247,63 @@ meter {
 
 :where([draggable="true"]) {
     -webkit-user-drag: element;
+}
+
+
+/*--------------------------------*/
+
+.bt{
+
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+.bt .bt-botones{
+    width: 30%;
+    display: flex;
+    gap:18px;
+    box-sizing: border-box;
+}
+
+.bt-botones button{
+    background: black;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+     width: 100%;
+     box-sizing: border-box;
+     transition: all .5s;
+}
+
+.bt-botones button:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+
+
+@media (max-width: 480px) {
+    .login-card {
+        width: 95%;
+        padding: 2px;
+    }
+
+    .bt .bt-botones{
+      
+        flex-direction: column;
+        width: 70%;
+        gap: 2px;
+        
+    }
+
+   
+
 }

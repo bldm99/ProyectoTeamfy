@@ -1,9 +1,10 @@
 .ECcompra {
-    position: absolute;
+    position: relative;
     background: #e7e7e7;
     margin: 0;
     width: 100%;
     padding-top: 70px;
+    
 }
 
 .EC-cont-pro {
@@ -66,6 +67,26 @@
     background: rgb(255, 166, 0);
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+.ECcompra .ECoformulario{
+    position: relative;
+    width: 100%;
+    background: greenyellow;
+    display: flex;
+    justify-content: center;
+}
 
 
 @media (max-width: 768px) {

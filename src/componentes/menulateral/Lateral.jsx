@@ -15,10 +15,14 @@ import Test from '../testing/Test';
 import Testcliente from '../testing/Testcliente';
 
 const Lateral = ({ cambio }) => {
+
+ 
+
   return (
-    <section className='lateral'>
-      <h2>Barra lateral</h2>
+    <section className='lateral' >
+      
       <div>
+        
         <ul>
           <li id="inicio" onClick={() => cambio(<Inicio/>)}>
             <FontAwesomeIcon icon={faHome} className="icon" />

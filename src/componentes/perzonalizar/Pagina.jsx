@@ -10,6 +10,8 @@ import * as Datareact from '../../Datareact'
 
 import imgpredeterminada from './portada.jpg'
 
+import { ImMenu } from "react-icons/im";
+
 const Pagina = () => {
 
     //var idLogeado = "64936e483562954d54515f92"
@@ -24,7 +26,7 @@ const Pagina = () => {
     const actualizarPagina = Datareact.actualizarPaginaReact
 
     const [userteamfy, setUserteamfy] = useState("")
-    const [idp , setIdp] = useState([])
+    const [idp, setIdp] = useState([])
 
 
 
@@ -37,13 +39,19 @@ const Pagina = () => {
     const [descripcion, setDescripcion] = useState('Tienda de ... ')
     const [color, setColor] = useState("#D9F7E9")
 
+    //mrnu lateral responsivo
+    var mysty = {
+        display: "none",
+    };
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
     useEffect(() => {
         const obtenerdata = async () => {
             try {
                 const idteam = Datareact.obtenerInfoTeamfy()
                 setUserteamfy(idteam.uid)
 
-                const idPagina = Datareact.buscarPaginaReact(idteam.uid , setIdp)
+                const idPagina = Datareact.buscarPaginaReact(idteam.uid, setIdp)
 
                 const ty = await pagina(idteam.uid, setDatapagina)
                 setTitulo(ty.titulo)
@@ -55,6 +63,14 @@ const Pagina = () => {
             }
         }
         obtenerdata()
+
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, [])
 
 
@@ -62,7 +78,7 @@ const Pagina = () => {
         await actualizarPagina(
             userteamfy,
             idp._id,
-            titulo ,
+            titulo,
             selectedImage,
             descripcion,
             color,
@@ -72,16 +88,26 @@ const Pagina = () => {
     }
 
 
-
+    if (windowWidth > 768) {
+        mysty = {
+            display: "block"
+        }
+    }
+    const [expanded, setExpanded] = useState(true);
+    const handleClick = () => {
+        setExpanded(!expanded);
+    };
 
 
     return (
         <div className='pagina'>
 
+            <div className='fixp'>
+                <ImMenu onClick={handleClick} size={32} color="#783030" />
+            </div>
 
-
-            <div className='cambios'>
-                <button onClick={() => { modificar() }}  >Guardar{idp._id} Cambios</button>
+            <div className='cambios' style={expanded ? {} : mysty}   >
+                {/*<button onClick={() => { modificar() }}  >Guardar{idp._id} Cambios</button>*/}
                 <Cambios
                     xtitulo={setTitulo}
                     ximagen={setSelectedImage}

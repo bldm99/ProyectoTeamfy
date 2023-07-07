@@ -5,12 +5,17 @@ import *as Datareact from '../../Datareact'
 
 import Campo from '../CampoFormulario/Campo';
 
+import { doc, updateDoc } from "firebase/firestore";
+import { database } from '../../Database';
+
+import { getDatabase, ref, push } from "firebase/database";
+
 const Test = () => {
 
     /////////////////////////////////////
 
     /////////////////////////////////////
-    
+
 
 
     //var idLogeado = "64936e483562954d54515f92"  Local
@@ -54,19 +59,38 @@ const Test = () => {
     const [html, setHtmln] = useState("")
     const [sku, setSku] = useState("")
 
-    //console.log(edit)
+    //Firebase
+    const idUserfirebase = "-NZi16CsuCU5hLRotqQB"
+    const db = getDatabase();
+    const snapsRef = ref(db, `usuarios/${idUserfirebase}/snaps`);
+
+    // Define los subcampos que deseas agregar
+    const snap = {
+        nombre,
+        precio,
+        imagen,
+        stock,
+        f_Inicio,
+        f_Final,
+        descripcion,
+        html,
+        sku
+    };
+
 
     useEffect(() => {
         const obtenerdata = async () => {
             try {
-                const x = await viewUsers('abc123', setDatausers)
+                //const x = await viewUsers('abc123', setDatausers)
 
-                
+
                 const idteam = Datareact.obtenerInfoTeamfy()
-                
+
                 //const product = await buscarProductos(idLogeado, setDataproductos)
                 const product = await buscarProductos(idteam.uid, setDataproductos)
+                console.log(product)
                 setUserteamfy(idteam.uid)
+
             } catch (error) {
                 console.log(error)
             }
@@ -101,8 +125,9 @@ const Test = () => {
     const registrarx = async (event) => {
         event.preventDefault()
         try {
-            await postProductos(userteamfy, nombre, precio, imagen, stock, f_Inicio, f_Final, descripcion , html , sku)
-            //await viewUsers('abc123', setDatausers);
+            await postProductos(userteamfy, nombre, precio, imagen, stock, f_Inicio, f_Final, descripcion, html, sku)
+
+            await push(snapsRef, snap);
             await buscarProductos(userteamfy, setDataproductos)
             console.log("Producto registrado")
         } catch (error) {

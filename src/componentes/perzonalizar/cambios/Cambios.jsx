@@ -47,7 +47,7 @@ const Cambios = ({ xtitulo, ximagen, xdescripcion, xcolor, tinte }) => {
             </div>
             
             <div className='cajas'>
-                <h2>Ajustes de plantilla</h2>
+                <h3>Ajustes de plantilla</h3>
                 {changecomp}
             </div>
 

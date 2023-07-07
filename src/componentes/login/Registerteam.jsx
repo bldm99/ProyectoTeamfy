@@ -1,20 +1,43 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Campo from "../CampoFormulario/Campo";
+
+import { database } from '../../Database';
+import { collection, addDoc } from 'firebase/firestore';
+import { getDatabase, ref, push } from "firebase/database";
+
 const Registerteam = (props) => {
 
     const navigate = useNavigate();
 
-    const {funcregister}  = props
+    const { funcregister } = props
 
     const [nombre, setNombre] = useState("")
     const [correo, setCorreo] = useState("")
     const [password, setPassword] = useState("")
     const [telefono, setTelefono] = useState("")
 
-    const registrarTe = async (event) =>{
+    const registrarTe = async (event) => {
         event.preventDefault()
-        await funcregister(nombre , correo , password , telefono , navigate)
+
+        const usuario = {
+            nombre: nombre,
+            correo: correo,
+            password: password,
+            telefono: telefono
+        };
+
+        try {
+            //await addDoc(collection(database, 'usuarios'), usuario);
+            const db = getDatabase();
+            const usuariosRef = ref(db, "usuarios");
+            await push(usuariosRef, usuario);
+            await funcregister(nombre, correo, password, telefono, navigate)
+
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 
     return (

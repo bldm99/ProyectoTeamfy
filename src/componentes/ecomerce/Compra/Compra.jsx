@@ -16,45 +16,79 @@ const Compra = () => {
 
     const buscarProducto = Datareact.buscarProducto
 
-
+    const [dueñopagina, setDueñopagina] = useState("")
     const { id } = useParams()
 
     const [producto, setProducto] = useState([])
     const [correologeado, setCorreologeado] = useState("")
 
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const handleComprar = () => {
+        setModalVisible(true);
+    };
+
+    const handleOutsideClick = (event) => {
+        if (event.target.classList.contains("modal")) {
+            setModalVisible(false);
+        }
+    };
+
+
+
 
 
 
     useEffect(() => {
+        document.addEventListener("click", handleOutsideClick);
         const optener = async () => {
             const datmaster = Datareact.obtenerInfoTeamfy()
-            //const res = await buscarProducto(idLogeado, id, setProducto)
+            setDueñopagina(datmaster.uid)
             const res = await buscarProducto(datmaster.uid, id, setProducto)
             const xcorreo = Ecom.obtenerInfo()
             setCorreologeado(xcorreo)
+
+
         }
+
         optener()
+        return () => {
+            document.removeEventListener("click", handleOutsideClick);
+
+        };
     }, [])
 
 
+
+    /*direccion,
+    cantidad,
+    tipopago*/
+
     const registrarPedido = async (valores) => {
+
+        var totales = producto.precio * valores.cantidad
         try {
             await Data.postPedidos(
-                idLogeado,
+                dueñopagina,
                 correologeado,
                 producto.nombre,
                 producto.imagen,
                 producto.precio,
                 valores.direccion,
-                "5",
+                valores.cantidad,
                 "En espera",
+                producto.sku,
+                valores.postal,
+                totales,
+                valores.tipopago,
                 navigate,
             )
+            
             console.log("El pedido fue realizado con exito")
         } catch (error) {
             console.log(error)
         }
-        
+
     }
 
 
@@ -84,8 +118,9 @@ const Compra = () => {
                             <div className="details-datos">
                                 <p>Precio: {producto.precio}</p>
                                 <p>Stock: {producto.stock}</p>
+                                <p>SKU: {producto.sku}</p>
 
-                                <button>Comprar</button>
+                                <button onClick={handleComprar} >Comprar</button>
                             </div>
 
                         </div>
@@ -97,9 +132,14 @@ const Compra = () => {
             </section>
 
             <section className="ECoformulario">
-                <Formulario
-                    datos={registrarPedido}
-                />
+                {modalVisible && (
+                    <div className="modal">
+                        <Formulario
+                            datos={registrarPedido}
+                            xprecio={producto.precio}
+                        />
+                    </div>
+                )}
             </section>
 
         </div>

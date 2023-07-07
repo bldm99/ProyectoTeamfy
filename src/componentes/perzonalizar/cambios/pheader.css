@@ -1,12 +1,15 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 .pheader{
-    color: black;
-    background-color: #e7e7e7;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(59, 58, 58);
+    background-color: #fffafa;
     display: flex;
     flex-direction: column;
-    
-    align-items: center;
+    font-size: calc(1rem * .8);
+ 
+    /*align-items: center;*/
     height: 100%;
+    padding: 5px;
 }
 
 .pheader hr{
@@ -15,14 +18,15 @@
     
 }
 
-.pheader h3 , h4{  
-    font-size: 1.29vw; 
+.pheader p{  
+    
     margin: 0;
     padding: 0;
 }
 
 .pheader .textField{
     margin-top: 8px;
+   
 }
 
 
@@ -43,15 +47,14 @@
 /*Dispositivos tabletas*/
 
 @media (max-width: 768px) {
-    .pheader  h3 , h4{  
-        font-size: 12px; 
+    
+    .pheader{
+        height: 480px;
+       
     }
-
 }
 
 /*------------------------------Mobile-------------------------------------*/
 @media (max-width: 425px) {
-    .pheader  h3 , h4{  
-        font-size: 8px; 
-    }
+    
 }
