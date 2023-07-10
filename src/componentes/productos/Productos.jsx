@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as Datareact from '../../Datareact';
-import './Productos.css';
+import './productos.css';
 import * as Data from '../../Data';
 import Campo from '../CampoFormulario/Campo';
 
@@ -58,6 +58,8 @@ const Productos = () => {
     }
     obtenerdata()
   }, []);
+
+  const tyu = ""
 
   console.log(dataproductos)
 
