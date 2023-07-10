@@ -1,5 +1,5 @@
 import React from 'react';
-import '../PlanPlata/PlanPlata.css';
+import '../PlanPlata/Planplata.css';
 
 import planplatamedalla from "../PlanPlata/imagenes/planplatamedalla.png"
 
