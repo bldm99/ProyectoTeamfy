@@ -8,16 +8,19 @@
     width: 50%;
     position: relative;
     overflow: hidden;
+    font-size: calc(1rem * .9);
+
+
 }
 
 
 .TDespacho .box-despacho {
     display: grid;
-    background: white;
-    
+    background: rgb(241, 219, 240);
     grid-template-columns: 50% 50%;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 7px;
+    padding: 5px;
     box-sizing: border-box;
 
 }
@@ -39,6 +42,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 7px;
     box-sizing: border-box;
 }
 
@@ -46,6 +50,8 @@
 
     padding: 5px;
     box-sizing: border-box;
+    position: relative;
+    text-align: center;
 }
 
 .box-despacho form p {
@@ -53,16 +59,83 @@
     padding: 0;
 }
 
-.box-despacho .more-detalles{
+.box-despacho .more-detalles {
     padding: 15px 0px;
     display: flex;
     justify-content: space-around;
 }
 
-.box-despacho form .det {
-    background: yellowgreen;
-    display: grid;
+.box-despacho form .my-options {
+    padding-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-around;
+}
+
+.box-despacho form .my-options label {
+    color: white;
+    background-color: black;
+    padding: 4px 4px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background .5s;
+    transition: all .5s;
+
+}
+
+.box-despacho form .my-options label:hover {
+    background-color: rgb(230, 197, 16);
+    color: black;
+    transform: scale(1.1);
+}
+
+.box-despacho .btn-pedido {
     width: 100%;
-    grid-template-columns: 100%;
-    gap: 2%;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+
+}
+
+.box-despacho .btn-pedido button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    width: 80%;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+
+.box-despacho .btn-pedido button:hover {
+    background-color: rgb(230, 197, 16);
+    color: black;
+    transform: scale(1.1);
+}
+
+
+
+@media (max-width: 768px) {
+    .TDespacho {
+        width: 80%;
+    }
+    .box-despacho .btn-pedido {
+        
+        padding-top: 50px;
+    
+    }
+}
+
+@media (max-width: 480px) {
+    .TDespacho {
+        width: 90%;
+    }
+    
 }

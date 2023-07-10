@@ -1,6 +1,21 @@
 
-.x{
+.Apmenu{
     margin: 0;
     padding: 0;
+    background: black;
    
+}
+
+.Apmenu .ap-wasap{
+    color: white;
+    display:flex ;
+    justify-content: center;
+}
+.Apmenu .ap-lista{
+    display:flex ;
+    justify-content: center;
+}
+
+.Apmenu .ap-lista ul li{
+    margin-top: 5px;
 }

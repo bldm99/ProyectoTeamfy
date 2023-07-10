@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.general-lr{
+.general-lr {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     background: linear-gradient(to right, #c8e31d, #e7a50b);
     padding-top: 10px;
     width: 100%;
-    
+
 }
-.login-card-container{
+
+.login-card-container {
     padding: 10px 0px;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +26,7 @@
     border-radius: 10px;
     position: relative;
     box-sizing: border-box;
-    
+
 }
 
 .login-card::before {
@@ -195,18 +196,21 @@
 /* Responsive */
 @media (max-width: 768px) {
     .login-card {
-        width: 80%; 
-        padding: 10px;  
+        width: 80%;
+        padding: 10px;
     }
 }
 
 
-a, button {
+a,
+button {
     cursor: revert;
 }
 
 
-ol, ul, menu {
+ol,
+ul,
+menu {
     list-style: none;
 }
 
@@ -218,7 +222,8 @@ table {
     border-collapse: collapse;
 }
 
-input, textarea {
+input,
+textarea {
     -webkit-user-select: auto;
 }
 
@@ -252,22 +257,22 @@ meter {
 
 /*--------------------------------*/
 
-.bt{
+.bt {
 
     display: flex;
     justify-content: center;
-    
+
 
 }
 
-.bt .bt-botones{
+.bt .bt-botones {
     width: 30%;
     display: flex;
-    gap:18px;
+    gap: 18px;
     box-sizing: border-box;
 }
 
-.bt-botones button{
+.bt-botones button {
     background: black;
     color: white;
     border: none;
@@ -277,12 +282,12 @@ meter {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: background .5s;
-     width: 100%;
-     box-sizing: border-box;
-     transition: all .5s;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all .5s;
 }
 
-.bt-botones button:hover{
+.bt-botones button:hover {
     background-color: white;
     color: black;
     transform: scale(1.1);
@@ -296,14 +301,14 @@ meter {
         padding: 2px;
     }
 
-    .bt .bt-botones{
-      
+    .bt .bt-botones {
+
         flex-direction: column;
         width: 70%;
         gap: 2px;
-        
+
     }
 
-   
+
 
 }

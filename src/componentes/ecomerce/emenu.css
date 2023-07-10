@@ -14,6 +14,37 @@
     margin-top: -18px;
 }
 
+.Ecl-cabezera .Ecl-titulo img{
+    border-radius: 50%;
+}
+
+/**/
+.Ecl-cabezera .Eapmenu{
+    margin-top: -18px;
+    color: white;
+    background: black;
+   
+}
+
+.Eapmenu .ep-wasap{
+    color: white;
+    display:flex ;
+    justify-content: center;
+}
+.Eapmenu .ep-lista{
+    display:flex ;
+    justify-content: center;
+}
+
+.Eapmenu .ep-lista ul li{
+    margin-top: 5px;
+}
+
+/**/
+
+
+
+
 .Ecl-header {
     display: flex;
     justify-content: space-between;
@@ -44,6 +75,16 @@
     display: flex;
     gap: 1.5rem;
     color: white;
+}
+
+.Ecl-header .Ecl-lista .Eli-s button {
+   
+    padding: 7;
+    border: none;
+    background: rgb(207, 159, 2);
+    color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .Ecl-header .Ecl-lista .Eicon-responive {

@@ -62,7 +62,8 @@ export const buscarPaginaReact2 = async (_id,  xset) => {
 
 
 
-export const actualizarPaginaReact = async (_id, paginaId, titulo, banner, descripcion, color, logo, wasap) => {
+export const actualizarPaginaReact = async (_id, paginaId, titulo, banner, descripcion, color, logo, wasap,
+    sub1 , sub2, sub3, sub4) => {
     try {
         const response = await axios.put(`${URLfinal}paginaReact`, {
             _id,
@@ -72,7 +73,13 @@ export const actualizarPaginaReact = async (_id, paginaId, titulo, banner, descr
             descripcion,
             color,
             logo,
-            wasap
+            wasap,
+
+            sub1,
+            sub2,
+            sub3,
+            sub4,
+
         });
         console.log(response.data);
     } catch (error) {
@@ -125,7 +132,7 @@ export function convertHexToRGB(hex) {
 //const URLtest = "http://localhost:3000/"
 const URLtest = "https://teamapi.bladimirchipana.repl.co/"
 
-//Funciones e login y register de los clientes Teamfy
+//Funciones e login y register de los clientes Teamfy, Ademas inicializa la pagian del usuario
 export const registerTeamfy = async (dueño, d_email, d_password, telefono, navigate) => {
     try {
         const response = await axios.post(`${URLtest}teamfyregister`, {
@@ -191,6 +198,10 @@ export const obtenerInfoTeamfy = () => {
     }
 }
 
+export const logout2 = () => {
+    localStorage.removeItem("tokenTeam");
+    
+}
 
 
 

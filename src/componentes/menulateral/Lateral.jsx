@@ -14,7 +14,15 @@ import Html from '../testing/Html';
 import Test from '../testing/Test';
 import Testcliente from '../testing/Testcliente';
 
+import * as Datareact from "../../Datareact"
+
 const Lateral = ({ cambio }) => {
+
+
+  const cerrarSesion2 = () => {
+    Datareact.logout2()
+    window.location.reload();
+}
 
  
 
@@ -72,8 +80,11 @@ const Lateral = ({ cambio }) => {
           </li>
           <li id="cerrar-sesion">
             <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
-            <Link to="/cerrar-sesion">
-              Cerrar Sesión
+
+            <li onClick={() => { cerrarSesion2() }}    >Cerrar Sesión</li>
+            <Link to="">
+              
+              
             </Link>
           </li>
         </ul>

@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .Eapariencia {
+    font-family: 'Poppins', sans-serif;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e7e7e7;
     position: relative;
     width: 100%;
+    font-size: calc(1rem * .9);
 
 
 }
+
+
+
+
 
 
 /*-------------Cabezera de pagina------------------------*/
@@ -16,23 +24,105 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
     background: red;
 }
 
 .Ep-portada img {
     width: 100%;
-    /* Opcional, si deseas ajustar la altura también */
-    height: 550px;
+    box-sizing: border-box;
     object-fit: cover;
+    height: 520px;
 }
 
 
 .Eapariencia .Ep-portada .Edesc {
     position: absolute;
+    left: 10px;
     width: 50%;
-    background: rgba(0, 3, 0, 0.7);
+    background: rgba(0, 3, 0, 0.5);
 }
+
+.Eapariencia .Ep-portada .Edesc h4 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: calc(1.6rem * .9);
+}
+
+.Eapariencia .Ep-portada .Edesc p {
+    letter-spacing: 1px;
+    font-size: calc(1rem * .9);
+    padding: 0;
+    margin: 0;
+}
+
+.Ep-portada .Edesc ul {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    justify-content: start;
+    padding: 10px;
+}
+
+.Ep-portada .Edesc ul li {
+    margin: 0;
+    padding: 0;
+    width: 10%;
+}
+
+
+
+/*--------------------------------------------------------------------------------------*/
+.Eapariencia .cl-information{
+    background: linear-gradient(to right, #c8e31d, #e7a50b);
+    color: black;
+    padding: 8px;
+    
+}
+
+.Eapariencia .cl-information .card-information{
+    border-radius: 8px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.4);
+    /*background: linear-gradient(to right, #c8e31d, #e7a50b);*/
+
+}
+
+.card-information .all-info .info-btn{
+    display: flex;
+    gap: 2px;
+}
+ 
+.card-information .all-info{
+    width: 75%;
+}
+
+
+.card-information .all-info button {
+    background: black;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    border: none;
+}
+
+.card-information .all-info button:hover {
+    background-color: rgba(245, 245, 245, 0.85);
+    cursor: pointer;
+    color: black;
+}
+
+
+
+
+
+
 
 
 .Eapariencia .Ecl-contenido {
@@ -43,7 +133,7 @@
 .Ecl-contenido .Econtenido-producto {
     display: grid;
     /*grid-template-columns: repeat(auto-fit,minmax(min(250px , 100%) ,1fr)); */
-    grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
     gap: 15px;
     justify-content: space-around;
     align-items: center;
@@ -116,6 +206,15 @@
 /*Modo tableta*/
 
 @media (max-width: 768px) {
-    
+    .Eapariencia .Ep-portada .Edesc {
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .Eapariencia .Ep-portada .Edesc {
+        width: 90%;
+    }
 
 }

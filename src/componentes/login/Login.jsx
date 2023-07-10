@@ -21,6 +21,7 @@ const Login = () => {
 
     return (
         <div className='body-login'>
+            <h1>Teamfy</h1>
 
             <div className='login-letras'>
                 <li onClick={() => setComponete(
@@ -30,13 +31,13 @@ const Login = () => {
                 <li onClick={() => setComponete(
                     <Loginteam funclogin={Datareact.loginTeamfy} />
                 )} >Login</li>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque esse odit velit,
-                    quidem inventore quod laborum facilis sequi, tempora enim natus aliquid
-                    voluptate suscipit? Dignissimos excepturi eaque asperiores quos est.
+                <p>Con Teamfy, los usuarios pueden dar vida a sus ideas y proyectos digitales
+                     sin necesidad de tener conocimientos técnicos avanzados. La plataforma ofrece 
+                     una amplia variedad de plantillas y herramientas de diseño para personalizar la apariencia y el estilo de las páginas web,
+                     permitiendo a los usuarios reflejar su identidad de marca de manera única.
                 </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque esse odit velit,
-                    quidem inventore quod laborum facilis sequi, tempora enim natus aliquid
-                    voluptate suscipit? Dignissimos excepturi eaque asperiores quos est.
+                <p>Teamfy es la plataforma ideal para aquellos que desean crear, 
+                    vender y gestionar sus páginas web de manera fácil y efectiva. 
                 </p>
             </div>
             <video src={video} loop autoPlay></video>

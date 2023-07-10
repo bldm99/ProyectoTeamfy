@@ -1,8 +1,10 @@
-import { useState , useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './emenu.css'
 
 import * as Datareact from "../../Datareact"
 import * as Ecom from "./Ecom"
+
+import { ImWhatsapp } from "react-icons/im";
 
 const Emenu = () => {
     var xlogo = "https://c4.wallpaperflare.com/wallpaper/834/299/692/city-lights-girl-moon-wallpaper-preview.jpg"
@@ -19,18 +21,18 @@ const Emenu = () => {
     const [color, setColor] = useState("")
 
     const [gmail, setGmail] = useState("")
- 
+
 
     useEffect(() => {
         const obtener = async () => {
             try {
                 const datmaster = Datareact.obtenerInfoTeamfy()
                 //const page = await buscarPaginaReact(idLogeado, idpagina, setPagina)
-                const page = await buscarPaginaReact(datmaster.uid , setPagina)
+                const page = await buscarPaginaReact(datmaster.uid, setPagina)
                 setColor(page.color)
                 const x = setGmail(Ecom.obtenerInfo())
                 //console.log(x)
-                
+
             } catch (error) {
                 console.log(error)
             }
@@ -43,7 +45,7 @@ const Emenu = () => {
     const xstylos = {
         backgroundColor: modificado,
     }
-    
+
 
     const [animacionActiva, setAnimacionActiva] = useState(false);
     const [mostrarmenu, setMostarmenu] = useState(false)
@@ -69,12 +71,13 @@ const Emenu = () => {
 
                     <ul className='Eli-s' >
 
-                        <li><button onClick={ () =>{cerrarSesion()}}  >logout</button></li>
+                        <li><button onClick={() => { cerrarSesion() }}  >logout</button></li>
+                        <li><ImWhatsapp style={{ color: '#55E511' }} /> {pagina.wasap} </li>
                         <li>{gmail}</li>
-                        <li>About</li>
-                        <li>Catalo</li>
-                        <li>Contacto</li>
-                        <li>Categoria</li>
+                        <li>{pagina.sub1}</li>
+                        <li>{pagina.sub2}</li>
+                        <li>{pagina.sub3}</li>
+                        <li>{pagina.sub4}</li>
                     </ul>
 
                     <ul className="Eicon-responive">
@@ -90,21 +93,18 @@ const Emenu = () => {
                 </div>
             </div>
 
-            <div className='Eapmenu' style={{ color: "black" }}>
+            <div className='Eapmenu'>
                 {mostrarmenu &&
                     <div className='x'>
-                        <div >
-                            <h3 >menu depegable</h3>
+                        <div  className='ep-wasap'>
+                        <h3 >WhatsApp <ImWhatsapp style={{ color: '#55E511' }}/> {pagina.wasap}  </h3>
                         </div>
-                        <div>
+                        <div className='ep-lista'>
                             <ul>
-                                <li>Opcion</li>
-                                <li>Opcion</li>
-                                <li>Opcion</li>
-
-                                <li>Opcion</li>
-                                <li>Opcion</li>
-                                <li>Opcion</li>
+                                <li>{pagina.sub1}</li>
+                                <li>{pagina.sub2}</li>
+                                <li>{pagina.sub3}</li>
+                                <li>{pagina.sub4}</li>
                             </ul>
                         </div>
                     </div>

@@ -5,13 +5,29 @@ import imag from "../../../assets/ps.jpg"
 
 const Despacho = (props) => {
 
-    const { datapedido } = props
+    const { datapedido, updatePedido } = props
 
     const [animate, setAnimate] = useState(false);
+
+    const [valorestado, setValorestado] = useState(datapedido.estado)
 
     useEffect(() => {
         setAnimate(true);
     }, []);
+
+    const actualizar = (event) => {
+        event.preventDefault()
+        let valoresForm = {
+            id_pedido: datapedido._id,
+            new_estado: valorestado
+        }
+        updatePedido(valoresForm)
+    }
+
+ 
+    var valorbutton = valorestado === "En espera" ? "Mantener estado" : "Confirmar despacho";
+
+
 
 
     return (
@@ -19,12 +35,10 @@ const Despacho = (props) => {
             <div className="box-despacho">
 
                 <div className={`despacho-imagen ${animate ? 'animate' : ''}`}>
-                    <img src={datapedido.imagen_producto ? datapedido.imagen_producto : imag} alt=""
-                        
-                    />
+                    <img src={datapedido.imagen_producto ? datapedido.imagen_producto : imag} alt="" />
                 </div>
 
-                <form>
+                <form onSubmit={actualizar}>
                     <h3>{datapedido.nombre_producto}</h3>
                     <p><strong>Direccion de envio:</strong> {datapedido.direccion}</p>
                     <p><strong>Cliente: </strong>{datapedido.correo_cliente}</p>
@@ -42,11 +56,24 @@ const Despacho = (props) => {
                             <p>{datapedido.total}</p>
                         </div>
                     </div>
+                    <div>
+                        <strong>Estado:</strong> {valorestado}
+                    </div>
+
+                    <div className="my-options" >
+                        <label htmlFor="" onClick={() => { setValorestado("En espera") }}>En espera</label>
+                        <label htmlFor="" onClick={() => { setValorestado("Completado") }}>Completado</label>
+                    </div>
+
+                    <div className="btn-pedido">
+                        <button>{valorbutton}</button>
+                    </div>
 
 
 
 
-                    <button>Realizar Pedido</button>
+
+
 
 
                 </form>

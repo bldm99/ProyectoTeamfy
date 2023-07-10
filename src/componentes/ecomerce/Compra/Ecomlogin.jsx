@@ -66,7 +66,7 @@ const Ecomlogin = () => {
                             place={'Ingresa tu contraseña'}
                             actualizarvalor={setLpassword}
                             obligatorio
-                            tipo={'text'}
+                            tipo={'password'}
                             span={"<span class='form-item-icon material-symbols-rounded'>lock</span>"}
                         />
                     </div>

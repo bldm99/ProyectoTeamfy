@@ -8,8 +8,34 @@
     height: 100%;
     display: grid;
     grid-template-columns: 15% 85%;
-   
-    
+}
+
+.cam .fix-cambios {
+    position: absolute;
+    top: 7px;
+    left: 53px;
+    z-index: 4;
+}
+
+.cam .fix-cambios button {
+    color: white;
+    background-color: black;
+    background-color: rgb(230, 197, 16);
+    padding: 5px 5px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background .5s;
+    transition: all .5s;
+    border: none;
+    text-transform: uppercase;
+
+}
+
+.cam .fix-cambios button:hover {
+    color: black;
+    transform: scale(1.1);
+
 }
 
 
@@ -33,6 +59,7 @@
 
 .cam .cajas {
     background: rgb(31, 28, 28);
+    padding-top: 20px;
     
 }
 
@@ -60,6 +87,7 @@
         width: 100%;
         display: flex;
         justify-content: space-around;
+        padding-top: 30px;
     }
 
     .options .options-li li {

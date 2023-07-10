@@ -8,6 +8,9 @@ import * as Datareact from "../../Datareact"
 import Apmenu from "../perzonalizar/apariencia/Apmenu"
 import Emenu from "./Emenu"
 
+import { ImFacebook2 } from "react-icons/im";
+import { ImWhatsapp } from "react-icons/im";
+import { ImTwitter } from "react-icons/im";
 
 
 
@@ -16,7 +19,7 @@ const Ecomerce = () => {
 
     const idLocal = import.meta.env.VITE_idLocal;
 
-    //var idLogeado = "64936e483562954d54515f92" //Local
+    //var idLogeado = "64936e483562954d54515f92" //Locald
 
     var idLogeado = "64979d173f4f94805507eb4e" // nube
     var idpagina = "6497aa3d3f4f94805507ec55" // nube
@@ -28,7 +31,7 @@ const Ecomerce = () => {
     const [productos, setProductos] = useState([])
     const [pagina, setPagina] = useState([])
 
-    
+
 
 
 
@@ -40,9 +43,9 @@ const Ecomerce = () => {
                 const resultado = await buscarProductos(x.uid, setProductos)
                 //console.log(resultado)
                 //const page = await buscarPaginaReact(idLogeado, idpagina, setPagina)
-                const page = await buscarPaginaReact(x.uid , setPagina)
+                const page = await buscarPaginaReact(x.uid, setPagina)
                 //setColor(page.color)
-                
+
 
             } catch (error) {
                 console.log(error)
@@ -65,12 +68,51 @@ const Ecomerce = () => {
 
                 <div className='Edesc'>
                     <h4>{pagina.descripcion}</h4>
+                    <p>Lorem ipsum ddolor sit amet consectetur adipisicing elit. Quam, rem minus.
+                        Voluptas inventore eveniet perspiciatis quam. Fuga eligendi nesciunt dignissimos?
+                        Eligendi fuga quisquam iure, aliquam impedit suscipit unde tempore dolores.
+                    </p>
+                    <ul>
+                        <li><ImFacebook2 /></li>
+                        <li><ImWhatsapp /></li>
+                        <li><ImTwitter /></li>
+                    </ul>
                 </div>
+            </section>
+
+
+
+            <section className='cl-information'>
+                <div className='card-information'>
+                    <div className='all-info'>
+                        <div>
+                            <div>
+                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Odio iusto, facere temporibus dolor minus enim tempora in vel.
+                                </h4>
+                            </div>
+                            <div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Saepe voluptas corrupti ab voluptates eligendi mollitia quod nam!
+                                    Fugit architecto nam repudiandae, voluptatibus aspernatur saepe,
+                                    molestiae ut ullam accusamus aperiam eum?
+                                </p>
+                            </div>
+                            <div className='info-btn'>
+                                <button>Vermas</button>
+                                <button>Continuar comprando</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </section>
 
             <section className='Ecl-contenido'>
                 <div>
-                    <h2>Ultimo en tendencias</h2>
+                    <h4>Intereses</h4>
                 </div>
                 <div className='Econtenido-producto'>
 

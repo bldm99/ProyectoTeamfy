@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
 .ECcompra {
+    font-family: 'Poppins', sans-serif;
     position: relative;
     background: #e7e7e7;
     margin: 0;
     width: 100%;
     padding-top: 70px;
+    font-size: calc(1rem * .9);
     
 }
 
@@ -54,9 +59,10 @@
 }
 
 .EC-caja .max img {
-    width: 100%;
+    width: 400px;
     box-sizing: border-box;
     transition: transform 0.3s;
+    object-fit: cover;
 }
 
 .EC-caja .max img:hover {
@@ -65,7 +71,44 @@
 
 .EC-caja .details {
     background: rgb(255, 166, 0);
+    padding: 10px;
+    box-sizing: border-box;
 }
+
+.EC-caja .details .x-det h3{
+    font-size: 25px;
+}
+
+.EC-caja .details .details-datos {
+    
+    width: 100%;
+}
+.EC-caja .details .details-datos .el-btn{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.EC-caja .details .details-datos button {
+    background: black;
+    width: 80%;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    border: none;
+}
+
+.EC-caja .details .details-datos button:hover {
+    background-color: rgba(245, 245, 245, 0.85);
+    cursor: pointer;
+    color: black;
+}
+
+
 
 .modal {
     position: fixed;

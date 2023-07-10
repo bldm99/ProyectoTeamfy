@@ -1,11 +1,20 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 .body-login {
+    font-family: 'Poppins', sans-serif;
     padding-top: 12%;
     width: 100%;
     display: flex;
     justify-content: space-around;
     color: white;
+   
+    font-size: calc(1rem * .9);
+     
+}
+
+.body-login h1 {
+    position: absolute;
+    top: 20px;
      
 }
 
@@ -29,10 +38,56 @@ video {
     border-radius: 10px;
 }
 
+.login-letras  li{
+    margin-top: 5px;
+    padding: 4px 7px;
+    list-style: none;
+    background: rgba(0, 8, 0, 0.8) ;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.login-letras  li {
+    background: black;
+    width: 100%;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    border: none;
+}
+
+.login-letras  li:hover {
+    background-color: rgba(245, 245, 245, 0.85);
+    cursor: pointer;
+    color: black;
+}
+
+
 .login-container{
     padding: 10px 5px;
     background: rgba(0, 8, 0, 0.5) ;
     width: 49%;
     box-sizing: border-box;
     border-radius: 10px;
+}
+
+.login-container button{
+    margin-top: 8px;
+    background: black;
+    width: 100%;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    border: none;
+}
+.login-container button:hover {
+    background-color: rgba(245, 245, 245, 0.85);
+    cursor: pointer;
+    color: black;
 }

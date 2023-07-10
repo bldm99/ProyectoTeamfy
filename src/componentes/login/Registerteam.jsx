@@ -68,7 +68,7 @@ const Registerteam = (props) => {
                         obligatorio
                         valor={password}
                         actualizarvalor={setPassword}
-                        tipo={'text'}
+                        tipo={'password'}
                     />
                     <Campo
                         place="Telefono"

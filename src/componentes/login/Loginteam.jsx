@@ -41,7 +41,7 @@ const Loginteam = (props) => {
                         obligatorio
                         valor={password}
                         actualizarvalor={setPassword}
-                        tipo={'text'}
+                        tipo={'password'}
                     />
                     
                     <button>Iniciar Sesion</button>

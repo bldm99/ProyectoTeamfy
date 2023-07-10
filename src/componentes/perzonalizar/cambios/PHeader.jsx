@@ -7,6 +7,8 @@ const PHeader = ({ xtitulo, ximagen , xdescripcion , xcolor , xtinte }) => {
 
  
     const [color , setColor] = useState(xtinte)
+
+    
  
     const actualizarCol = (event) => {
         //console.log(event.target.value)

@@ -62,4 +62,4 @@ export const obtenerInfo =  () => {
 export const logout = () => {
     localStorage.removeItem("token");
     
-  }
+}

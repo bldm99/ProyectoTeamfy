@@ -179,9 +179,12 @@ export const postClientes = async (_id, correo, password, pais) => {
 
 //Buscar todos los Clientes del usario que esta logueado
 export const buscarClientes = async (_id, xset) => {
-    if (_id === idLogeado) {
+    const token = localStorage.getItem("tokenTeam");
+    const decodedToken = jwt_decode(token);
+    const uid = decodedToken?.uid;
+    if (_id === uid) {
         try {
-            const response = await axios.get(`${URLtest}cliente`, {
+            const response = await axios.get(`${URLfinal}cliente`, {
                 params: {
                     _id
                 }

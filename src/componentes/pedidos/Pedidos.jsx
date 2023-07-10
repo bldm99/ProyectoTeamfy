@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './pedidos.css';
 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import * as Data from '../../Data';
 import *as Datareact from "../../Datareact"
 
@@ -33,6 +36,8 @@ const Pedidos = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const [estadoFiltrado, setEstadoFiltrado] = useState('todos');
+
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
     const obtenerPedido = async () => {
@@ -49,19 +54,11 @@ const Pedidos = () => {
     obtenerPedido()
     return () => {
       document.removeEventListener("click", handleOutsideClick);
-
     };
-    //fetchImages();
   }, []);
 
-  /*const fetchImages = async () => {
-    try {
-      const response = await axios.get('https://teamapi-1.bladimirchipana.repl.co/userpr');
-      setImages(response.data);
-    } catch (error) {
-      console.error('Error fetching images:', error);
-    }
-  };*/
+
+
 
 
   const showSlide = (index) => {
@@ -86,14 +83,46 @@ const Pedidos = () => {
   };
 
 
-  const filteredImages = images.filter((image) =>
+  /*const filteredImages = images.filter((image) =>
     image.nombre_producto.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  );*/
 
- 
+  const handleFiltrarCompletados = () => {
+    setEstadoFiltrado('Completado');
+  };
+
+  const handleFiltrarEnEspera = () => {
+    setEstadoFiltrado('En espera');
+  };
+
+  const handleMostrarTodos = () => {
+    setEstadoFiltrado('todos');
+  };
+
+  const filteredImages = images.filter((image) => {
+    // Filtrar por término de búsqueda y estado
+    const nombreIncluido = image.nombre_producto.toLowerCase().includes(searchTerm.toLowerCase());
+    const estadoCumple = estadoFiltrado === 'todos' || image.estado === estadoFiltrado;
+    return nombreIncluido && estadoCumple;
+  });
+
+
+  const updatePedido = async (dato) => {
+    try {
+      await Data.actualizarPedido(dataclienteid, dato.id_pedido, dato.new_estado)
+      setModalVisible(false);
+      await Data.buscarPedidos(dataclienteid, setImages)
+      toast.success('¡La actualización fue exitosa!');
+      console.log("La actualizacion fue exitosa")
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
   return (
     <div className='xpedidos'>
+      <ToastContainer />
       <div className="search-bar">
         <input
           type="text"
@@ -103,6 +132,12 @@ const Pedidos = () => {
           className="search-input"
         />
         <button className="search-button">Search</button>
+
+      </div>
+      <div className='pedido-filtro'>
+        <button onClick={handleFiltrarCompletados}>Completados</button>
+        <button onClick={handleFiltrarEnEspera}>En espera</button>
+        <button onClick={handleMostrarTodos}>Mostrar todo</button>
       </div>
       <div className="carousel">
         <div
@@ -152,8 +187,12 @@ const Pedidos = () => {
               <div className="product-name">{image.nombre_producto}</div>
               <div className="product-price">{`Price: $${image.precio_producto}`}</div>
             </div>
-            
-            <button onClick={() => { handleComprar(); setPedidoid(image); }}>Despachar</button>
+
+            <button
+              className={`despachar-button ${image.estado === 'En espera' ? 'en-espera' : 'completado'}`}
+              onClick={() => { handleComprar(); setPedidoid(image); }}>
+              {image.estado === 'En espera' ? 'Despachar' : 'Completado'}
+            </button>
 
 
           </div>
@@ -167,7 +206,7 @@ const Pedidos = () => {
           <div className="modal">
             <Despacho
               datapedido={pedidoid}
-
+              updatePedido={updatePedido}
             />
           </div>
         )}

@@ -102,6 +102,33 @@
     display: inline-block;
     border-radius: 5px;
   }
+
+
+  /*new*/
+  .clientes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .clientes-table th,
+  .clientes-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .clientes-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .clientes-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .clientes-table tbody tr:hover {
+    background-color: #e6e6e6;
+  }
   
  
 

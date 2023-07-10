@@ -2,6 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import "./compra.css"
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //import Campo from "../../CampoFormulario/Campo"
 import Formulario from "../Formulario/Formulario";
@@ -60,9 +62,6 @@ const Compra = () => {
 
 
 
-    /*direccion,
-    cantidad,
-    tipopago*/
 
     const registrarPedido = async (valores) => {
 
@@ -83,7 +82,9 @@ const Compra = () => {
                 valores.tipopago,
                 navigate,
             )
-            
+            toast.success('¡Compra exitosa!');
+            setModalVisible(false);
+
             console.log("El pedido fue realizado con exito")
         } catch (error) {
             console.log(error)
@@ -95,6 +96,7 @@ const Compra = () => {
 
     return (
         <div className="ECcompra">
+            <ToastContainer />
 
             <section className="EC-cont-pro">
 
@@ -110,17 +112,22 @@ const Compra = () => {
                         <div className="max">
                             <img src={producto.imagen} alt="" />
                         </div>
+
                         <div className="details">
-                            <div>
+                            <div className="x-det">
                                 <h3>{producto.descripcion}</h3>
-                                <h4>{producto.nombre}</h4>
+                                <h4>Nombre:{producto.nombre}</h4>
                             </div>
                             <div className="details-datos">
                                 <p>Precio: {producto.precio}</p>
                                 <p>Stock: {producto.stock}</p>
                                 <p>SKU: {producto.sku}</p>
 
-                                <button onClick={handleComprar} >Comprar</button>
+                                <div className="el-btn">
+                                    <button onClick={handleComprar} >Comprar</button>
+                                </div>
+
+
                             </div>
 
                         </div>

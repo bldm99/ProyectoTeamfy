@@ -1,5 +1,7 @@
 
 import './pagina.css'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Cambios from './cambios/Cambios';
 import axios from 'axios';
@@ -14,6 +16,8 @@ import { ImMenu } from "react-icons/im";
 
 const Pagina = () => {
 
+
+    const tflogo = "https://t4.ftcdn.net/jpg/04/63/32/89/360_F_463328917_omAk7Zf7qkeIUXghapTUGMeoyLOxxCAt.jpg"
     //var idLogeado = "64936e483562954d54515f92"
     //var idpagina = "6494df187587bad2f3d03dc9"
 
@@ -39,6 +43,15 @@ const Pagina = () => {
     const [descripcion, setDescripcion] = useState('Tienda de ... ')
     const [color, setColor] = useState("#D9F7E9")
 
+    const [logo, setLogo] = useState(tflogo)
+    const [wasap, setWasap] = useState("+051")
+    const [sub1, setSub1] = useState("titulo1")
+    const [sub2, setSub2] = useState("titulo2")
+    const [sub3, setSub3] = useState("titulo3")
+    const [sub4, setSub4] = useState("titulo4")
+
+
+
     //mrnu lateral responsivo
     var mysty = {
         display: "none",
@@ -58,6 +71,14 @@ const Pagina = () => {
                 setDescripcion(ty.descripcion)
                 setSelectedImage(ty.banner)
                 setColor(ty.color)
+
+                setLogo(ty.logo)
+                setWasap(ty.wasap)
+
+                setSub1(ty.sub1)
+                setSub2(ty.sub2)
+                setSub3(ty.sub3)
+                setSub4(ty.sub4)
             } catch (error) {
                 console.log(error)
             }
@@ -75,16 +96,25 @@ const Pagina = () => {
 
 
     const modificar = async () => {
-        await actualizarPagina(
-            userteamfy,
-            idp._id,
-            titulo,
-            selectedImage,
-            descripcion,
-            color,
-            "https://c4.wallpaperflare.com/wallpaper/575/892/1007/logo-gigabyte-aorus-hd-wallpaper-preview.jpg",
-            "789658741"
-        )
+        try {
+            await actualizarPagina(
+                userteamfy,
+                idp._id,
+                titulo,
+                selectedImage,
+                descripcion,
+                color,
+                logo,
+                wasap,
+                sub1,
+                sub2,
+                sub3,
+                sub4
+            )
+            toast.success('¡Pagina actualizada de manera exitosa!');
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 
@@ -104,18 +134,34 @@ const Pagina = () => {
 
             <div className='fixp'>
                 <ImMenu onClick={handleClick} size={32} color="#783030" />
+                
             </div>
 
             <div className='cambios' style={expanded ? {} : mysty}   >
-                {/*<button onClick={() => { modificar() }}  >Guardar{idp._id} Cambios</button>*/}
+                
+
                 <Cambios
                     xtitulo={setTitulo}
                     ximagen={setSelectedImage}
                     xdescripcion={setDescripcion}
                     xcolor={setColor}
                     tinte={color}
+
+                    xlogo={logo}
+                    xwasap={wasap}
+                    updwasap={setWasap}
+                    updlogo={setLogo}
+                    xsub1={setSub1}
+                    xsub2={setSub2}
+                    xsub3={setSub3}
+                    xsub4={setSub4}
+
+                    imbanner={selectedImage}
+
+                    actualizar={modificar}
                 />
             </div>
+
 
             <div className='apariencia'>
                 <Apariencia
@@ -123,6 +169,13 @@ const Pagina = () => {
                     imagen={selectedImage}
                     descripcion={descripcion}
                     color={color}
+
+                    logo={logo}
+                    wasap={wasap}
+                    sub1={sub1}
+                    sub2={sub2}
+                    sub3={sub3}
+                    sub4={sub4}
                 />
             </div>
 

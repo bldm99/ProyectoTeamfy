@@ -69,7 +69,7 @@ const Ecomregister = () => {
                             place={'Ingresa tu contraseña'}
                             actualizarvalor={setPassword}
                             obligatorio
-                            tipo={'text'}
+                            tipo={'password'}
                             span={"<span class='form-item-icon material-symbols-rounded'>lock</span>"}
                         />
 
