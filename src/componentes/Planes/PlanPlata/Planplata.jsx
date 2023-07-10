@@ -19,6 +19,7 @@ export default function PlanPlata() {
                     <p>TEAMFY</p>
                     ______________________________________________________________________________
                     <h1>¡PLAN PLATA!</h1>
+                    <h1>plan</h1>
                     <p>Llega a más personas con Teamfy</p>
                 </div>
             </div>

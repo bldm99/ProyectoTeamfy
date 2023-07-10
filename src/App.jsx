@@ -23,6 +23,7 @@ import Eregister from './componentes/ecomerce/Compra/Eregister'
 
 import Login from './componentes/login/Login'
 import Planoro from './componentes/Planes/PlanOro/Planoro/';
+
 import Planplata from './componentes/Planes/PlanPlata/Planplata'
 import Planbronce from './componentes/Planes/PlanBronce/Planbronce'
 
