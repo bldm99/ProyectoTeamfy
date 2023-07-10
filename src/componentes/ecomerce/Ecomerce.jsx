@@ -135,24 +135,7 @@ const Ecomerce = () => {
                         </div>
                     ))}
 
-                    {productos.map((item) => (
-                        <div className='Ecaja-p' key={item._id}>
-                            <div>
-                                <Link to={`/paginaexplorer/${item._id}`}>
-                                    <img src={item.imagen} alt="Imagen" />
-                                </Link>
-                            </div>
-                            <div className='Ea-informacion'>
-                                <div className='Enom'>
-                                    <h3>{item.nombre}</h3>
-                                    <p>S/. {item.precio}</p>
-                                </div>
-                                <div className='Enom-2'>
-                                    <p>{item.stock}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                    
 
 
 

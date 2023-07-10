@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './emenu.css'
-
+import { Link } from 'react-router-dom';
 import * as Datareact from "../../Datareact"
 import * as Ecom from "./Ecom"
 
@@ -72,6 +72,11 @@ const Emenu = () => {
                     <ul className='Eli-s' >
 
                         <li><button onClick={() => { cerrarSesion() }}  >logout</button></li>
+                        <li >
+                            <Link to="/test" style={{color:"green" , listStyle: "none" , textDecoration:"none" , fontSize:"15px"}}   >
+                                Login
+                            </Link>
+                        </li>
                         <li><ImWhatsapp style={{ color: '#55E511' }} /> {pagina.wasap} </li>
                         <li>{gmail}</li>
                         <li>{pagina.sub1}</li>
@@ -96,8 +101,8 @@ const Emenu = () => {
             <div className='Eapmenu'>
                 {mostrarmenu &&
                     <div className='x'>
-                        <div  className='ep-wasap'>
-                        <h3 >WhatsApp <ImWhatsapp style={{ color: '#55E511' }}/> {pagina.wasap}  </h3>
+                        <div className='ep-wasap'>
+                            <h3 >WhatsApp <ImWhatsapp style={{ color: '#55E511' }} /> {pagina.wasap}  </h3>
                         </div>
                         <div className='ep-lista'>
                             <ul>

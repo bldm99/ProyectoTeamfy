@@ -186,34 +186,8 @@ const Apariencia = ({ titu, imagen, descripcion, color, logo, wasap, sub1, sub2,
                             </div>
                         </div>
                     ))}
-                    {productos.map((item) => (
-                        <div className='caja-p' key={item._id}>
-                            <img src={item.imagen} alt="Producto" />
-                            <div className='a-informacion'>
-                                <div className='nom'>
-                                    <h3>{item.nombre}</h3>
-                                    <p>S/. {item.precio}</p>
-                                </div>
-                                <div className='nom-2'>
-                                    <p>{item.stock}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                    {productos.map((item) => (
-                        <div className='caja-p' key={item._id}>
-                            <img src={item.imagen} alt="Producto" />
-                            <div className='a-informacion'>
-                                <div className='nom'>
-                                    <h3>{item.nombre}</h3>
-                                    <p>S/. {item.precio}</p>
-                                </div>
-                                <div className='nom-2'>
-                                    <p>{item.stock}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                    
+                    
 
 
                     <div className='caja-p'>
