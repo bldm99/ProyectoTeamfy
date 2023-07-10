@@ -61,7 +61,7 @@ const Inicio = () => {
                     <div className="integrante zoom">
                         <img src={imgprueba} alt="Imagen" />
 
-                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <h3><br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
                         <div className="logo-container">
                             <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
                             <a href="/linke"> <img className='logo' src={logolinkedin} /></a>
@@ -72,7 +72,7 @@ const Inicio = () => {
                     <div className="integrante zoom">
                         <img src={imgprueba} alt="Imagen" />
 
-                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <h3><br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
                         <div className="logo-container">
                             <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
                             <a href="/linke"> <img className='logo' src={logolinkedin} /></a>
@@ -83,7 +83,7 @@ const Inicio = () => {
                     <div className="integrante zoom">
                         <img src={imgprueba} alt="Imagen" />
 
-                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <h3><br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
                         <div className="logo-container">
 
                             <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
@@ -100,7 +100,7 @@ const Inicio = () => {
                     <div className="integrante zoom">
                         <img src={imgprueba} alt="Imagen" />
 
-                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <h3><br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
                         <div className="logo-container">
                             <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
                             <a href="/linke"> <img className='logo' src={logolinkedin} /></a>
@@ -111,7 +111,7 @@ const Inicio = () => {
                     <div className="integrante zoom">
                         <img src={imgprueba} alt="Imagen" />
 
-                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <h3><br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
                         <div className="logo-container">
                             <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
                             <a href="/linke"> <img className='logo' src={logolinkedin} /></a>
@@ -122,7 +122,7 @@ const Inicio = () => {
                     <div className="integrante zoom">
                         <img src={imgprueba} alt="Imagen" />
 
-                        <h3><strong>Nombre:</strong> <br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
+                        <h3><br></br> Fabricio Favio Polanco Pezo <br></br> <strong>Cargo:</strong> <br></br> Supervisor Jefe</h3>
                         <div className="logo-container">
 
                             <a href="/face"> <img className='logo' src={logofacebook} alt="" /></a>
