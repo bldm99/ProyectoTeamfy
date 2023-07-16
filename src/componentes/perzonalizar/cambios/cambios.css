@@ -6,8 +6,11 @@
     position: fixed;
     width: 26%;
     height: 100%;
+   
     display: grid;
     grid-template-columns: 15% 85%;
+    justify-content: start;
+    box-sizing: border-box;
 }
 
 .cam .fix-cambios {
@@ -18,9 +21,8 @@
 }
 
 .cam .fix-cambios button {
-    color: white;
-    background-color: black;
-    background-color: rgb(230, 197, 16);
+    color: rgb(80, 77, 77);
+    background-color: rgb(245, 211, 16);
     padding: 5px 5px;
     border-radius: 2px;
     box-sizing: border-box;
@@ -43,23 +45,34 @@
 .cam .options {
     display: flex;
     justify-content: center;
-    background: rgb(0, 0, 0);
+    background: rgb(3, 3, 3);
     padding: 10px 0px;
+   
 }
 
 .options .options-li {
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 
-.options .options-li li {
+.options .options-li li  {
     list-style: none;
     margin-top: 1.5rem;
+    box-sizing: border-box;
+    transition: all .5s;
+
+}
+.options .options-li li:hover {
+    transform: scale(1.1);
+    box-sizing: border-box;
+   
 }
 
 .cam .cajas {
-    background: rgb(31, 28, 28);
+    background: rgb(10, 10, 10);
     padding-top: 20px;
+    height: 100%;
     
 }
 
@@ -76,18 +89,16 @@
     .cam {
         width: 50%;
         z-index: 2;
-        height: 0%;
-        grid-template-columns: 100%;
-       
+        display: flex;
+        flex-direction: column;
     }
-
-    
 
     .options .options-li {
         width: 100%;
+        height: 20px;
         display: flex;
         justify-content: space-around;
-        padding-top: 30px;
+        padding-top: 30px;    
     }
 
     .options .options-li li {

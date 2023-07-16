@@ -1,6 +1,7 @@
 .cuerpo {
     padding-top: 76px;
     background: orange;
+    background-color: #f1f1f1;
     display: grid;
     grid-template-columns: 18% 82%;
     /*grid-template-columns: repeat(2, 70% 30%);*/

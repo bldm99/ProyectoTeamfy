@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 .Pwasap{
     font-family: 'Poppins', sans-serif;
-    background: rgb(45, 187, 10);
-    padding: 2px 1px;
+    /*background: rgb(45, 187, 10);
+    padding: 2px 1px;*/
     box-sizing: border-box;
-    color: rgb(122, 122, 122);
+    color: rgb(136, 130, 130);
     border-radius: 12px;
     letter-spacing: 1px;
-    font-size: calc(1rem * .9);
+    font-size: calc(1rem * .8);
+    
+    
 }
 
 .Pwasap .card-pwasap{
     background: rgb(250, 247, 247);
     background: rgb(241, 219, 240);
+    background: rgb(10, 10, 10);
     border-radius: 12px;
-    height: 600px;
+    
 }
 
 .card-pwasap .box-logo {

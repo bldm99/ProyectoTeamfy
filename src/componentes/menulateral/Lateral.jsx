@@ -29,7 +29,7 @@ const Lateral = ({ cambio }) => {
   return (
     <section className='lateral' >
       
-      <div>
+      <div className='sub-lateral'>
         
         <ul>
           <li id="inicio" onClick={() => cambio(<Inicio/>)}>
